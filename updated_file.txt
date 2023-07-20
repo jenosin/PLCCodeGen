@@ -1,0 +1,47 @@
+	MODULE FRM_P1_LOCAL (
+		     Parent := "Local",
+	                     ParentModPortId := 1,
+	                     CatalogNumber := "1756-EN2TR",
+	                     Vendor := 1,
+	                     ProductType := 12,
+	                     ProductCode := 200,
+	                     Major := 11,
+	                     Minor := 1,
+	                     PortLabel := "RxBACKPLANE",
+                         Slot := "2,
+                         NodeAddress := "192.168.1.2",
+	                     CommMethod := 536870914,
+	                     Mode := 2#0000_0000_0000_0000,
+	                     CompatibleModule := 1,
+	                     KeyMask := 2#0000_0000_0001_1111)
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>1756-EN2TR</CatNum><ConfigID>131178</ConfigID><TimeSyncEnabled/></public>___]]]
+			ConfigData := [20,768,393217,33619969,256,0];
+			CONNECTION Input2 (Rate := 500000,
+			                   EventID := 0,
+			                   Unicast := No)
+			END_CONNECTION
+
+	END_MODULE	MODULE FRM_P1_LOCAL (
+		     Parent := "Local",
+	                     ParentModPortId := 1,
+	                     CatalogNumber := "1756-EN2TR",
+	                     Vendor := 1,
+	                     ProductType := 12,
+	                     ProductCode := 200,
+	                     Major := 11,
+	                     Minor := 1,
+	                     PortLabel := "RxBACKPLANE",
+                         Slot := 3,
+                         NodeAddress := "192.168.1.22",
+	                     CommMethod := 536870914,
+	                     Mode := 2#0000_0000_0000_0000,
+	                     CompatibleModule := 1,
+	                     KeyMask := 2#0000_0000_0001_1111)
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>1756-EN2TR</CatNum><ConfigID>131178</ConfigID><TimeSyncEnabled/></public>___]]]
+			ConfigData := [20,768,393217,33619969,256,0];
+			CONNECTION Input2 (Rate := 500000,
+			                   EventID := 0,
+			                   Unicast := No)
+			END_CONNECTION
+
+	END_MODULE

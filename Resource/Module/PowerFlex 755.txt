@@ -1,0 +1,340 @@
+	MODULE S001PRBDV (
+		Description := "Motor Setup With Safe Torque Off",
+	                  Parent := "FRM_P1_LOCAL",
+	                  ParentModPortId := 2,
+	                  CatalogNumber := "PowerFlex 755-EENET",
+	                  Vendor := 1,
+	                  ProductType := 143,
+	                  ProductCode := 2192,
+	                  Major := 13,
+	                  Minor := 2,
+	                  PortLabel := "ENet",
+	                  Slot := 0,
+	                  NodeAddress := "192.168.1.170",
+	                  CommMethod := 536870913,
+	                  Mode := 2#0000_0000_0000_0000,
+	                  CompatibleModule := 1,
+	                  KeyMask := 2#0000_0000_0001_1111,
+	                  DrivesADCMode := 1,
+	                  DrivesADCEnabled := 0,
+	                  SafetyEnabled := 0)
+			ExtendedProp := [[[___<public><ConfigID>115</ConfigID><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>PowerFlex 755-EENET</CatNum><InputDataTag>&lt;DataTypes&gt;&lt;DataType Name=$QAB:PowerFlex755_E_322FF555:I:0$Q Class=$QIO$Q&gt;&lt;Members&gt;&lt;Member Name=$Qpad$Q DataType=$QDINT$Q Hidden=$Q1$Q /&gt;&lt;Member Name=$QDriveStatus$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QDriveStatus_Ready$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Active$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_CommandDir$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_ActualDir$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Accelerating$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Decelerating$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Alarm$Q DataType=$QBIT$Q BitNumber=$Q6$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Faulted$Q DataType=$QBIT$Q BitNumber=$Q7$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_AtSpeed$Q DataType=$QBIT$Q BitNumber=$Q8$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Manual$Q DataType=$QBIT$Q BitNumber=$Q9$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_SpdRefBit0$Q DataType=$QBIT$Q BitNumber=$Q10$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_SpdRefBit1$Q DataType=$QBIT$Q BitNumber=$Q11$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_SpdRefBit2$Q DataType=$QBIT$Q BitNumber=$Q12$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_SpdRefBit3$Q DataType=$QBIT$Q BitNumber=$Q13$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_SpdRefBit4$Q DataType=$QBIT$Q BitNumber=$Q14$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Running$Q DataType=$QBIT$Q BitNumber=$Q16$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Jogging$Q DataType=$QBIT$Q BitNumber=$Q17$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Stopping$Q DataType=$QBIT$Q BitNumber=$Q18$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_DCBraking$Q DataType=$QBIT$Q BitNumber=$Q19$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_DBActive$Q DataType=$QBIT$Q BitNumber=$Q20$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_SpeedMode$Q DataType=$QBIT$Q BitNumber=$Q21$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_PositionMode$Q DataType=$QBIT$Q BitNumber=$Q22$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_TorqueMode$Q DataType=$QBIT$Q BitNumber=$Q23$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_AtZeroSpeed$Q DataType=$QBIT$Q BitNumber=$Q24$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_AtHome$Q DataType=$QBIT$Q BitNumber=$Q25$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_AtLimit$Q DataType=$QBIT$Q BitNumber=$Q26$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_CurrLimit$Q DataType=$QBIT$Q BitNumber=$Q27$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_BusFrqReg$Q DataType=$QBIT$Q BitNumber=$Q28$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_EnableOn$Q DataType=$QBIT$Q BitNumber=$Q29$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_MotorOL$Q DataType=$QBIT$Q BitNumber=$Q30$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QDriveStatus_Regen$Q DataType=$QBIT$Q BitNumber=$Q31$Q Target=$QDriveStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QFeedback$Q DataType=$QREAL$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QPsnFdbk$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QActiveVelFdbk$Q DataType=$QREAL$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QUndefined_3$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QOutputCurrent$Q DataType=$QREAL$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QDriveTempC$Q DataType=$QREAL$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QLastFaultCode$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QStartInhibits$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QStartInhibits_Faulted$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Alarm$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Enable$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Precharge$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Stop$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Database$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Startup$Q DataType=$QBIT$Q BitNumber=$Q6$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Safety$Q DataType=$QBIT$Q BitNumber=$Q7$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Sleep$Q DataType=$QBIT$Q BitNumber=$Q8$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_Profiler$Q DataType=$QBIT$Q BitNumber=$Q9$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QStartInhibits_CommutNotCfg$Q DataType=$QBIT$Q BitNumber=$Q10$Q Target=$QStartInhibits$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP7_DigInSts$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QP7_DigInSts_Input0$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QP7_DigInSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP7_DigInSts_Input1$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QP7_DigInSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP7_DigInSts_Input2$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QP7_DigInSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP7_DigInSts_Input3$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QP7_DigInSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP7_DigInSts_Input4$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QP7_DigInSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP7_DigInSts_Input5$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QP7_DigInSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP5_EncoderFeedback$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QP4_FB0LinStahlSts$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QP4_FB0LinStahlSts_OpticsAlarm$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_OutOfRailAlm$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_Reserved$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_Reserved1$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_OutOfRailErr$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_Reserved2$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_Reserved3$Q DataType=$QBIT$Q BitNumber=$Q6$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_Reserved4$Q DataType=$QBIT$Q BitNumber=$Q7$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_ReadHead1$Q DataType=$QBIT$Q BitNumber=$Q8$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_ReadHead2$Q DataType=$QBIT$Q BitNumber=$Q9$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_RAMError$Q DataType=$QBIT$Q BitNumber=$Q10$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_EPROMError$Q DataType=$QBIT$Q BitNumber=$Q11$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_ROMError$Q DataType=$QBIT$Q BitNumber=$Q12$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_Reserved5$Q DataType=$QBIT$Q BitNumber=$Q13$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0LinStahlSts_NoPosition$Q DataType=$QBIT$Q BitNumber=$Q14$Q Target=$QP4_FB0LinStahlSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QP4_FB0Sts_EncoderErr$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_MsgChecksum$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_Timeout$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_Comm$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_Diagnostic$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_SpplyVltgRng$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_SCAmplitude$Q DataType=$QBIT$Q BitNumber=$Q6$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_OpenWire$Q DataType=$QBIT$Q BitNumber=$Q7$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_QuadLoss$Q DataType=$QBIT$Q BitNumber=$Q8$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_PhaseLoss$Q DataType=$QBIT$Q BitNumber=$Q9$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_UnsuppEnc$Q DataType=$QBIT$Q BitNumber=$Q10$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_Reserved$Q DataType=$QBIT$Q BitNumber=$Q11$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QP4_FB0Sts_EncoderAlm$Q DataType=$QBIT$Q BitNumber=$Q12$Q Target=$QP4_FB0Sts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPTPSetpoint$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QPredMaintSts$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QPredMaintSts_HeatsinkFan$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_InternalFan$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_MtrBearing$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_MtrLube$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_MchBearing$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_MchLube$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved$Q DataType=$QBIT$Q BitNumber=$Q6$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved1$Q DataType=$QBIT$Q BitNumber=$Q7$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved2$Q DataType=$QBIT$Q BitNumber=$Q8$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved3$Q DataType=$QBIT$Q BitNumber=$Q9$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved4$Q DataType=$QBIT$Q BitNumber=$Q10$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved5$Q DataType=$QBIT$Q BitNumber=$Q11$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved6$Q DataType=$QBIT$Q BitNumber=$Q12$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved7$Q DataType=$QBIT$Q BitNumber=$Q13$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Reserved8$Q DataType=$QBIT$Q BitNumber=$Q14$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPredMaintSts_Master$Q DataType=$QBIT$Q BitNumber=$Q15$Q Target=$QPredMaintSts$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QPsnRegStatus_OffsetIntgtr$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_OffsetReRef$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_PsnIntgrtr$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_IntegLmtLo$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_IntegLmtHi$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_SpdLmtLo$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_SpdLmtHi$Q DataType=$QBIT$Q BitNumber=$Q6$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_PsnRegActv$Q DataType=$QBIT$Q BitNumber=$Q7$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_IntgrtrHold$Q DataType=$QBIT$Q BitNumber=$Q8$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_PsnW1Detect$Q DataType=$QBIT$Q BitNumber=$Q9$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_PsnW2Detect$Q DataType=$QBIT$Q BitNumber=$Q10$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPsnRegStatus_InPsnDetect$Q DataType=$QBIT$Q BitNumber=$Q11$Q Target=$QPsnRegStatus$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPTPCommand$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QLimitedTrqRef$Q DataType=$QREAL$Q Radix=$QDecimal$Q /&gt;&lt;/Members&gt;&lt;/DataType&gt;&lt;/DataTypes&gt;</InputDataTag><OutputDataTag>&lt;DataTypes&gt;&lt;DataType Name=$QAB:PowerFlex755_E_9EF8C07F:O:0$Q Class=$QIO$Q&gt;&lt;Members&gt;&lt;Member Name=$QLogicCommand$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QLogicCommand_Stop$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_Start$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_Jog1$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_ClearFaults$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_Forward$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_Reverse$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_Manual$Q DataType=$QBIT$Q BitNumber=$Q6$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_AccelTime1$Q DataType=$QBIT$Q BitNumber=$Q8$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_AccelTime2$Q DataType=$QBIT$Q BitNumber=$Q9$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_DecelTime1$Q DataType=$QBIT$Q BitNumber=$Q10$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_DecelTime2$Q DataType=$QBIT$Q BitNumber=$Q11$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_SpdRefSel0$Q DataType=$QBIT$Q BitNumber=$Q12$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_SpdRefSel1$Q DataType=$QBIT$Q BitNumber=$Q13$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_SpdRefSel2$Q DataType=$QBIT$Q BitNumber=$Q14$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_CoastStop$Q DataType=$QBIT$Q BitNumber=$Q16$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_CLimitStop$Q DataType=$QBIT$Q BitNumber=$Q17$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_Run$Q DataType=$QBIT$Q BitNumber=$Q18$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QLogicCommand_Jog2$Q DataType=$QBIT$Q BitNumber=$Q19$Q Target=$QLogicCommand$Q&gt;&lt;/Member&gt;&lt;Member Name=$QReference$Q DataType=$QREAL$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QPTPSetpoint$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QPTPFwdVelLmt$Q DataType=$QREAL$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QPTPRevVelLmt$Q DataType=$QREAL$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QP4_ModuleErrReset$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;Member Name=$QPTPControl$Q DataType=$QDINT$Q Radix=$QBinary$Q /&gt;&lt;Member Name=$QPTPControl_VelOverride$Q DataType=$QBIT$Q BitNumber=$Q0$Q Target=$QPTPControl$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPTPControl_Move$Q DataType=$QBIT$Q BitNumber=$Q1$Q Target=$QPTPControl$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPTPControl_ReverseMove$Q DataType=$QBIT$Q BitNumber=$Q2$Q Target=$QPTPControl$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPTPControl_PresetPsn$Q DataType=$QBIT$Q BitNumber=$Q3$Q Target=$QPTPControl$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPTPControl_IntgrtrHold$Q DataType=$QBIT$Q BitNumber=$Q4$Q Target=$QPTPControl$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPTPControl_RefPause$Q DataType=$QBIT$Q BitNumber=$Q5$Q Target=$QPTPControl$Q&gt;&lt;/Member&gt;&lt;Member Name=$QPTPControl_RefSync$Q DataType=$QBIT$Q BitNumber=$Q6$Q Target=$QPTPControl$Q&gt;&lt;/Member&gt;&lt;Member Name=$QSpdTrqPsnModeA$Q DataType=$QDINT$Q Radix=$QDecimal$Q /&gt;&lt;/Members&gt;&lt;/DataType&gt;&lt;/DataTypes&gt;</OutputDataTag><LgxVersion>33</LgxVersion><UdcAopVersion>5.7.0.91</UdcAopVersion><CustomizationCode>0</CustomizationCode><CustomizationVersion>0.0</CustomizationVersion><DriveRatingCode>1107296366</DriveRatingCode><DriveRatingOptions>1</DriveRatingOptions><ConnectedCommModule>13</ConnectedCommModule><PrimaryModulePort>0</PrimaryModulePort></public>___]]]
+			ConfigData := [360,0,6,0,1,0,110,16896,0,0,0,0,0,0,0,0,780,0,785,0,786,0,-25534,0,770,0,309,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,847,0,131,0,0,0
+		,7,0,944,0,951,0,933,0,4465,1,-15532,0,-25509,0,-25526,0,780,0,469,0,724,0,784,0,690,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+			ConfigScript (Size := 2680) := [116,10,0,0,4,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,8,-106,0,0,0,1,0,0,0,1,0,0,0,8,0,0,0,75,2,32,-110,36,0,-1,-1,0,0,0,-91,9,0,0,8,30,0,0,0,1,0,0,0,1,0
+		,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,2,0,3,0,0,2,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,3,0,3,44,1,9,4,1,0,0,0,4,2,0,0,0,4,1,0,0,0,0,3,49,1,9,4,1,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,4,0,47,0,0,5,1,1,0,3,0,0,1,2,0,0,0,1,0,0,2,1,0,0,2,1,0,1,1,2,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,5,0,3,0,0,2,1,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,6,0,1,0,0,31,36,2,0,16,0,54,0,88,0,95,0,83
+		,0,48,0,52,0,48,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48
+		,5,7,0,6,1,0,6,24,7,0,100,0,2,0,8,0,65,0,109,0,112,0,115,0,32,0,32,0,32,0,32,0,0,6,2,0,6,24,11,0,100,0,2,0,8,0,66,0,117,0,115,0,32,0,86,0
+		,68,0,67,0,32,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,8,0,6,3,0,6,24,8,0,100,0,2,0,8,0,79,0,117,0,116,0,32,0,86,0,108,0,116,0,115
+		,0,0,6,4,0,6,24,9,0,100,0,2,0,8,0,79,0,117,0,116,0,32,0,80,0,119,0,114,0,32,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,9,0,6,5,0,6,24
+		,14,0,100,0,2,0,8,0,69,0,108,0,112,0,32,0,107,0,87,0,72,0,114,0,0,6,6,0,6,24,5,0,100,0,2,0,8,0,84,0,114,0,113,0,32,0,67,0,117,0,114,0
+		,32,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,10,0,3,70,0,9,4,0,0,0,0,0,3,25,0,9,4,0,0,-16,67,4,102,102,-10,64,4,0,0,112,66,4,0,96
+		,-42,68,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,11,0,3,30,0,9,4,-51,-52,-68,64,0,3,71
+		,0,9,4,0,0,22,67,0,3,73,0,9,4,113,61,-72,65,4,31,5,-5,66,4,-72,30,53,64,4,0,0,0,63,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16
+		,3,32,-98,36,1,48,5,12,0,3,77,0,9,4,0,0,0,0,4,0,0,0,0,4,113,61,-72,65,0,3,81,0,9,4,0,0,0,0,4,0,0,0,0,0,3,86,0,9,4,102,102,-8,65,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,13,0,3,87,0,9,4,51,51,99,65,4,123,20,-96,65,4,123,20,-96,65,0,3,93,0,9
+		,4,-72,30,69,63,0,3,110,0,9,4,41,92,-17,64,4,41,92,111,-64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5
+		,14,0,3,120,0,9,4,123,20,-96,65,0,3,109,2,9,4,72,97,-87,66,0,3,36,0,9,4,0,0,-26,67,4,0,0,2,67,4,0,0,-128,64,0,3,43,0,9,4,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,15,0,3,44,0,9,4,26,-64,-37,61,0,3,60,0,9,4,0,0,0,0,4,0,0,0,0,4,0,0,-26,66,4,0,0,112
+		,65,0,3,8,2,9,4,0,-128,9,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,16,0,3,9,2,9,4,0,-128,9,-59,0,3,73,1
+		,9,4,0,-128,9,69,0,3,119,1,9,4,-35,-124,59,68,0,3,127,1,9,4,0,0,60,66,0,3,-118,1,9,4,0,0,48,65,0,3,-90,1,9,4,102,102,-98,65,0,0,0,0
+		,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,17,0,3,-89,1,9,4,102,102,-98,65,0,3,-76,1,9,4,0,0,48,65,0,3,-73,1,9,4,0,0,48,65,0,3,-61,1,9,4
+		,0,0,52,67,0,3,-58,1,9,4,0,0,52,67,0,3,-51,1,9,4,-72,-2,-107,67,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,18,0,3,-45,1,9,4,0,0,-128
+		,64,0,3,12,2,9,4,-123,-85,-110,67,4,-82,71,-31,63,0,3,35,2,9,4,0,-128,9,69,0,3,40,2,9,4,0,-128,9,69,0,3,44,2,9,4,0,0,-86,67,0,0,0,0
+		,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,19,0,3,45,2,9,4,0,0,-86,-61,0,3,52,2,9,4,0,-128,9,69,0,3,59,2,9,4,0,0,72,67,4,0,0,0,0,4,0
+		,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,20,0,3,63,2,9,4,0,0,0,0,4,0,0,0,0,4,0,0,0,0,0,3,90,2,9,4
+		,0,-128,9,69,0,3,94,2,9,4,0,-128,9,69,0,3,125,0,9,4,84,-61,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,21,0,3,126
+		,0,9,4,2,0,0,0,0,3,124,2,9,4,0,0,-80,65,0,3,-122,2,9,4,0,-128,59,69,0,3,-128,0,9,4,-119,0,0,0,4,3,0,0,0,0,3,-120,2,9,4,0,0,32,65,0,0,0,0,0
+		,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,22,0,3,-33,2,9,4,0,0,-64,64,0,3,17,3,9,4,0,0,72,67,4,0,0,72,-61,0,3,56,3,9,4,-102,-103
+		,-103,62,0,3,81,4,9,4,-49,119,106,66,0,3,87,4,9,4,-119,65,0,64,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,23,0,3,3,6,9,4
+		,0,0,0,64,4,0,0,32,65,0,3,7,6,9,4,-51,-52,76,63,4,0,0,0,63,4,0,0,-80,64,0,3,25,6,9,4,-51,-52,-116,64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,24,0,3,26,6,9,4,-82,71,-31,63,0,3,57,6,9,4,0,0,92,68,4,0,0,92,-60,0,3,93,6,9,4,0,0,112,66,0,3,105
+		,6,9,4,0,0,112,66,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,25,0,3,35,0,9,4,3,0,0,0,0,3,50,0,9,4,0,80,-95,69
+		,4,0,80,-90,69,4,0,-128,69,68,0,3,115,0,9,4,-89,-50,35,60,0,3,-121,0,9,4,69,-100,0,0,4,69,-100,0,0,0,3,-101,0,9,4,-16,85,0,0,1,0
+		,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,26,0,3,-98,0,9,4,41,-48,106,0,0,3,54,1,9,4,7,0,0,0,0,3,66,1,9,4,-51,-52,-52,61,0,3,115,1,9,4,1,0,0,0
+		,4,2,0,0,0,4,2,0,0,0,0,3,126,1,9,4,1,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,27,0,3,-128,1,9,4,0,0,72,68,4,0,-96,8,71,0,3,-98,1
+		,9,4,0,0,0,0,0,3,-86,1,9,4,0,0,72,-60,0,3,-62,1,9,4,2,0,0,0,0,3,23,2,9,4,0,0,0,64,4,0,0,0,64,4,-51,-52,76,63,1,0,0,0,74,0,0,0,16,3,32,-98,36
+		,1,48,5,28,0,3,26,2,9,4,-51,-52,76,63,4,-51,-52,76,63,0,3,33,2,9,4,109,3,0,0,0,3,38,2,9,4,0,0,0,0,0,3,-124,2,9,4,0,0,72,68,4,51,51,83,65
+		,0,3,-121,2,9,4,51,51,-111,66,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,29,0,3,-119,2,9,4,0,0,-64,64,4,0,0,112,65,0,3,-102,2,9
+		,4,0,0,0,-65,0,3,-72,2,9,4,0,0,0,0,4,0,0,0,0,4,0,0,-6,67,0,3,-63,2,9,4,0,0,-128,65,0,3,-59,2,9,4,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48
+		,5,30,0,3,-58,2,9,4,0,0,-96,66,0,3,-42,2,9,4,1,0,0,0,4,-51,-52,76,62,0,3,-37,2,9,2,0,0,0,3,12,3,9,4,69,15,0,0,4,0,0,0,63,4,-123,-21,-47
+		,63,0,3,19,3,9,4,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-98,36,1,48,5,31,0,3,65,3,9,4,0,0,-128,64,4,0,0,72,67,0,3,70,3,9,4,0,0,0,0,4,0,0,64,65,0
+		,3,13,4,9,4,-97,2,0,0,0,3,18,4,9,4,-97,2,0,0,0,3,20,4,9,2,1,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,8,100,0,0,0,1,0,0,0,6,0,0,0,24,0,0,0,16,3,32,-110,36,0
+		,48,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0,0,0,0,0,0,34,0,0,0,8,61,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32,-105,36,0,48,3,3,3,0,0,0,-120,19,0,0,0,0
+		,23,0,0,0,8,62,0,0,0,1,0,0,0,1,0,0,0,6,0,0,0,75,2,32,-105,36,0,0,29,0,0,0,0,100,0,0,0,2,0,0,0,-128,0,0,0,-97,-73,8,71,98,-56,17,-24,-100
+		,108,32,71,71,-56,38,-126,0,0,0];
+			CONNECTION Output (Rate := 20000,
+			                   InputCxnPoint := 1,
+			                   InputSize := 76,
+			                   OutputCxnPoint := 2,
+			                   OutputSize := 32,
+			                   EventID := 0,
+			                   Unicast := Yes)
+					InputData (COMMENT.P7_DIGINSTS_INPUT5 := "VFD#1$NDigital Input 5$NControlled Stop On",
+            Class := Standard) := [0,0,0.00000000e+000,0,0.00000000e+000,0,0.00000000e+000,0.00000000e+000,0,0,0,0,0,0,0,0,0,0,0.00000000e+000
+		];
+					OutputData (Class := Standard) := [17,0.00000000e+000,0,0.00000000e+000,0.00000000e+000,0,2,1];
+			END_CONNECTION
+
+	END_MODULE
+
+	MODULE $NoName (
+		Parent := "S001PRBDV",
+	            ParentModPortId := 1,
+	            CatalogNumber := "RHINOBP-DRIVE-PERIPHERAL-MODULE",
+	            Vendor := 1,
+	            ProductType := 0,
+	            ProductCode := 28,
+	            Major := 1,
+	            Minor := 1,
+	            UserDefinedVendor := 1,
+	            UserDefinedProductType := 143,
+	            UserDefinedProductCode := 767,
+	            UserDefinedMajor := 2,
+	            UserDefinedMinor := 3,
+	            Slot := 1,
+	            Mode := 2#0000_0000_0000_0000,
+	            CompatibleModule := 0,
+	            KeyMask := 2#0000_0000_0000_0000,
+	            ShutdownParentOnFault := 0,
+	            DrivesADCMode := 1,
+	            DrivesADCEnabled := 0,
+	            UserDefinedCatalogNumber := "20-HIM-x6")
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>RHINOBP-DRIVE-PERIPHERAL-MODULE</CatNum><Port1DeviceDefinition>0001000000FF00000002000100000000000100010302    0001030200010000</Port1DeviceDefinition><Port1CCV>0</Port1CCV><Port1CCVInfo>1,0,0,0,0,0,0,0,0,</Port1CCVInfo><Port1HLP_Size>0</Port1HLP_Size><Port1Type>20-HIM-x6</Port1Type><ConfigID>100</ConfigID><CustomizationCode>0</CustomizationCode><CustomizationVersion>0.0</CustomizationVersion><IsOptional>True</IsOptional></public>___]]]
+			ConfigData := [8,6,1];
+			ConfigScript (Size := 252) := [-8,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,8,-106,0,0,0,1,0,0,0,1,0,0,0,8,0,0,0,75,2,32,-110,36,0,-1,-1,0,0,0,43,0,0,0,8,30,0,0,0,1,0,0,0,1,0,0,0,9
+		,0,0,0,16,3,32,-109,36,0,48,2,3,1,0,0,0,9,0,0,0,16,3,32,-109,36,4,48,9,0,0,45,0,0,0,8,100,0,0,0,1,0,0,0,6,0,0,0,24,0,0,0,16,3,32,-110,36,0
+		,48,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0,0,0,0,0,0,34,0,0,0,8,61,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32,-105,36,0,48,3,3,3,0,0,0,-120,19,0,0,0,0
+		,23,0,0,0,8,62,0,0,0,1,0,0,0,1,0,0,0,6,0,0,0,75,2,32,-105,36,0,0,29,0,0,0,0,100,0,0,0,2,0,0,0,-128,0,0,0,78,-99,119,35,42,-116,17,-25,-105
+		,-25,-44,-127,-41,106,26,-110,0,0,0];
+	END_MODULE
+
+	MODULE $NoName (
+		Parent := "S001PRBDV",
+	            ParentModPortId := 1,
+	            CatalogNumber := "RHINOBP-DRIVE-PERIPHERAL-MODULE",
+	            Vendor := 1,
+	            ProductType := 0,
+	            ProductCode := 28,
+	            Major := 1,
+	            Minor := 1,
+	            UserDefinedVendor := 1,
+	            UserDefinedProductType := 143,
+	            UserDefinedProductCode := 8608,
+	            UserDefinedMajor := 1,
+	            UserDefinedMinor := 15,
+	            Slot := 4,
+	            Mode := 2#0000_0000_0000_0000,
+	            CompatibleModule := 1,
+	            KeyMask := 2#0000_0000_0001_1111,
+	            ShutdownParentOnFault := 0,
+	            DrivesADCMode := 1,
+	            DrivesADCEnabled := 0,
+	            UserDefinedCatalogNumber := "Universal Fdbk")
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>RHINOBP-DRIVE-PERIPHERAL-MODULE</CatNum><Port4DeviceDefinition>0001000000A000000021000100000000000100010F01    00010F0100010000</Port4DeviceDefinition><Port4CCV>0</Port4CCV><Port4CCVInfo>1,0,0,0,0,0,0,0,0,</Port4CCVInfo><Port4HLP_Size>0</Port4HLP_Size><Port4Type>Universal Fdbk</Port4Type><ConfigID>100</ConfigID><CustomizationCode>0</CustomizationCode><CustomizationVersion>0.0</CustomizationVersion></public>___]]]
+			ConfigData := [8,6,1];
+			ConfigScript (Size := 328) := [68,1,0,0,4,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,8,-106,0,0,0,1,0,0,0,1,0,0,0,8,0,0,0,75,2,32,-110,36,0,-1,-1,0,0,0,26,0,0,0,8,30,0,0,0,1,0,0,0,1,0,0,0,9
+		,0,0,0,16,3,32,-109,36,0,48,2,3,0,0,86,0,0,0,8,31,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32,-97,36,0,48,2,3,1,0,0,0,12,0,0,0,16,3,32,-97,36,6,48
+		,9,16,0,0,0,1,0,0,0,12,0,0,0,16,3,32,-97,36,9,48,9,0,0,0,0,1,0,0,0,12,0,0,0,16,3,32,-97,36,25,48,9,85,0,0,0,0,0,45,0,0,0,8,100,0,0,0,1,0,0,0,6
+		,0,0,0,24,0,0,0,16,3,32,-110,36,0,48,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0,0,0,0,0,0,34,0,0,0,8,61,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32,-105,36
+		,0,48,3,3,3,0,0,0,-120,19,0,0,0,0,23,0,0,0,8,62,0,0,0,1,0,0,0,1,0,0,0,6,0,0,0,75,2,32,-105,36,0,0,29,0,0,0,0,100,0,0,0,2,0,0,0,-128,0,0,0,97,-99
+		,94,-109,42,-112,17,-25,-105,-25,-44,-127,-41,106,26,-110,0,0,0];
+	END_MODULE
+
+	MODULE $NoName (
+		Parent := "S001PRBDV",
+	            ParentModPortId := 1,
+	            CatalogNumber := "RHINOBP-DRIVE-PERIPHERAL-MODULE",
+	            Vendor := 1,
+	            ProductType := 0,
+	            ProductCode := 28,
+	            Major := 1,
+	            Minor := 1,
+	            UserDefinedVendor := 1,
+	            UserDefinedProductType := 143,
+	            UserDefinedProductCode := 8352,
+	            UserDefinedMajor := 1,
+	            UserDefinedMinor := 6,
+	            Slot := 5,
+	            Mode := 2#0000_0000_0000_0000,
+	            CompatibleModule := 1,
+	            KeyMask := 2#0000_0000_0001_1111,
+	            ShutdownParentOnFault := 0,
+	            DrivesADCMode := 1,
+	            DrivesADCEnabled := 0,
+	            UserDefinedCatalogNumber := "Encoder")
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>RHINOBP-DRIVE-PERIPHERAL-MODULE</CatNum><Port5DeviceDefinition>0001000000A000000020000100000000000100010601    0001060100050000</Port5DeviceDefinition><Port5CCV>0</Port5CCV><Port5CCVInfo>1,0,0,0,0,0,0,0,0,</Port5CCVInfo><Port5HLP_Size>0</Port5HLP_Size><Port5Type>Encoder</Port5Type><ConfigID>100</ConfigID><CustomizationCode>0</CustomizationCode><CustomizationVersion>0.0</CustomizationVersion></public>___]]]
+			ConfigData := [8,6,1];
+			ConfigScript (Size := 236) := [-24,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,8,-106,0,0,0,1,0,0,0,1,0,0,0,8,0,0,0,75,2,32,-110,36,0,-1,-1,0,0,0,26,0,0,0,8,31,0,0,0,1,0,0,0,1,0,0,0
+		,9,0,0,0,16,3,32,-97,36,0,48,2,3,0,0,45,0,0,0,8,100,0,0,0,1,0,0,0,6,0,0,0,24,0,0,0,16,3,32,-110,36,0,48,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0
+		,0,0,0,0,0,34,0,0,0,8,61,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32,-105,36,0,48,3,3,3,0,0,0,-120,19,0,0,0,0,23,0,0,0,8,62,0,0,0,1,0,0,0,1,0,0,0,6,0,0,0
+		,75,2,32,-105,36,0,0,29,0,0,0,0,100,0,0,0,2,0,0,0,-128,0,0,0,97,-99,94,-108,42,-112,17,-25,-105,-25,-44,-127,-41,106,26,-110
+		,0,0,0];
+	END_MODULE
+
+	MODULE $NoName (
+		Parent := "S001PRBDV",
+	            ParentModPortId := 1,
+	            CatalogNumber := "RHINOBP-DRIVE-PERIPHERAL-MODULE",
+	            Vendor := 1,
+	            ProductType := 0,
+	            ProductCode := 28,
+	            Major := 1,
+	            Minor := 1,
+	            UserDefinedVendor := 1,
+	            UserDefinedProductType := 143,
+	            UserDefinedProductCode := 16544,
+	            UserDefinedMajor := 1,
+	            UserDefinedMinor := 1,
+	            Slot := 6,
+	            Mode := 2#0000_0000_0000_0000,
+	            CompatibleModule := 1,
+	            KeyMask := 2#0000_0000_0001_1111,
+	            ShutdownParentOnFault := 0,
+	            DrivesADCMode := 1,
+	            DrivesADCEnabled := 0,
+	            UserDefinedCatalogNumber := "Safe Torque Off")
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>RHINOBP-DRIVE-PERIPHERAL-MODULE</CatNum><Port6DeviceDefinition>0001000000A000000040000100000000000100010101    0001010100010000</Port6DeviceDefinition><Port6CCV>0</Port6CCV><Port6CCVInfo>1,0,0,0,0,0,0,0,0,</Port6CCVInfo><Port6HLP_Size>0</Port6HLP_Size><Port6Type>Safe Torque Off</Port6Type><ConfigID>100</ConfigID><CustomizationCode>0</CustomizationCode><CustomizationVersion>0.0</CustomizationVersion></public>___]]]
+			ConfigData := [8,6,1];
+			ConfigScript (Size := 236) := [-24,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,8,-106,0,0,0,1,0,0,0,1,0,0,0,8,0,0,0,75,2,32,-110,36,0,-1,-1,0,0,0,26,0,0,0,8,31,0,0,0,1,0,0,0,1,0,0,0
+		,9,0,0,0,16,3,32,-97,36,0,48,2,3,0,0,45,0,0,0,8,100,0,0,0,1,0,0,0,6,0,0,0,24,0,0,0,16,3,32,-110,36,0,48,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0
+		,0,0,0,0,0,34,0,0,0,8,61,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32,-105,36,0,48,3,3,3,0,0,0,-120,19,0,0,0,0,23,0,0,0,8,62,0,0,0,1,0,0,0,1,0,0,0,6,0,0,0
+		,75,2,32,-105,36,0,0,29,0,0,0,0,100,0,0,0,2,0,0,0,-128,0,0,0,97,-99,94,-112,42,-112,17,-25,-105,-25,-44,-127,-41,106,26,-110
+		,0,0,0];
+	END_MODULE
+
+	MODULE $NoName (
+		Parent := "S001PRBDV",
+	            ParentModPortId := 1,
+	            CatalogNumber := "RHINOBP-DRIVE-PERIPHERAL-MODULE",
+	            Vendor := 1,
+	            ProductType := 0,
+	            ProductCode := 28,
+	            Major := 1,
+	            Minor := 1,
+	            UserDefinedVendor := 1,
+	            UserDefinedProductType := 143,
+	            UserDefinedProductCode := 928,
+	            UserDefinedMajor := 1,
+	            UserDefinedMinor := 8,
+	            Slot := 7,
+	            Mode := 2#0000_0000_0000_0000,
+	            CompatibleModule := 1,
+	            KeyMask := 2#0000_0000_0001_1111,
+	            ShutdownParentOnFault := 0,
+	            DrivesADCMode := 1,
+	            DrivesADCEnabled := 0,
+	            UserDefinedCatalogNumber := "I/O Module 24V")
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>RHINOBP-DRIVE-PERIPHERAL-MODULE</CatNum><Port7DeviceDefinition>0001000000A000000003000100000000000100010801    0001080100060000</Port7DeviceDefinition><Port7CCV>0</Port7CCV><Port7CCVInfo>1,0,0,0,0,0,0,0,0,</Port7CCVInfo><Port7HLP_Size>0</Port7HLP_Size><Port7Type>I/O Module 24V</Port7Type><ConfigID>100</ConfigID><CustomizationCode>0</CustomizationCode><CustomizationVersion>0.0</CustomizationVersion></public>___]]]
+			ConfigData := [8,6,1];
+			ConfigScript (Size := 336) := [76,1,0,0,4,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,8,-106,0,0,0,1,0,0,0,1,0,0,0,8,0,0,0,75,2,32,-110,36,0,-1,-1,0,0,0,126,0,0,0,8,31,0,0,0,1,0,0,0,1,0,0,0
+		,9,0,0,0,16,3,32,-97,36,0,48,2,3,1,0,0,0,12,0,0,0,16,3,32,-97,36,10,48,9,67,109,1,0,1,0,0,0,12,0,0,0,16,3,32,-97,36,78,48,9,-96,26,-26
+		,65,1,0,0,0,12,0,0,0,16,3,32,-97,36,79,48,9,-96,26,-26,-63,1,0,0,0,12,0,0,0,16,3,32,-97,36,100,48,9,2,0,0,0,1,0,0,0,12,0,0,0,16,3,32,-97
+		,36,101,48,9,10,-41,-93,60,0,0,45,0,0,0,8,100,0,0,0,1,0,0,0,6,0,0,0,24,0,0,0,16,3,32,-110,36,0,48,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0,0
+		,0,0,0,0,34,0,0,0,8,61,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32,-105,36,0,48,3,3,3,0,0,0,-120,19,0,0,0,0,23,0,0,0,8,62,0,0,0,1,0,0,0,1,0,0,0,6,0,0,0,75
+		,2,32,-105,36,0,0,29,0,0,0,0,100,0,0,0,2,0,0,0,-128,0,0,0,88,80,-3,66,98,-54,17,-24,-100,108,32,71,71,-56,38,-126,0,0,0];
+	END_MODULE
+
+	MODULE $NoName (
+		Parent := "S001PRBDV",
+	            ParentModPortId := 1,
+	            CatalogNumber := "RHINOBP-DRIVE-PERIPHERAL-MODULE",
+	            Vendor := 1,
+	            ProductType := 0,
+	            ProductCode := 28,
+	            Major := 1,
+	            Minor := 1,
+	            UserDefinedVendor := 1,
+	            UserDefinedProductType := 143,
+	            UserDefinedProductCode := 32928,
+	            UserDefinedMajor := 1,
+	            UserDefinedMinor := 1,
+	            Slot := 13,
+	            Mode := 2#0000_0000_0000_0000,
+	            CompatibleModule := 0,
+	            KeyMask := 2#0000_0000_0000_0000,
+	            ShutdownParentOnFault := 0,
+	            DrivesADCMode := 1,
+	            DrivesADCEnabled := 0,
+	            UserDefinedCatalogNumber := "EtherNet/IP")
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>RHINOBP-DRIVE-PERIPHERAL-MODULE</CatNum><Port13DeviceDefinition>0001000000A000000080000100000000000100010101    0001020100010000</Port13DeviceDefinition><Port13CCV>0</Port13CCV><Port13CCVInfo>1,0,0,0,0,0,0,0,0,</Port13CCVInfo><Port13HLP_Size>0</Port13HLP_Size><Port13Type>EtherNet/IP</Port13Type><ConfigID>100</ConfigID><CustomizationCode>0</CustomizationCode><CustomizationVersion>0.0</CustomizationVersion></public>___]]]
+			ConfigData := [8,6,1];
+			ConfigScript (Size := 876) := [104,3,0,0,4,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,8,-106,0,0,0,1,0,0,0,1,0,0,0,8,0,0,0,75,2,32,-110,36,0,-1,-1,0,0,0,-103,2,0,0,8,31,0,0,0,1,0,0,0,1,0
+		,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,2,0,3,0,0,2,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,3,0,1,0,0,31,36,2,0,16,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32
+		,0,32,0,32,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,4,0,3,36,0,9,4,0,0,0,0,0,3,38,0,9,4,-64,0,0,0
+		,4,-88,0,0,0,4,1,0,0,0,4,-86,0,0,0,4,-1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,5,0,3,43,0,9,4
+		,-1,0,0,0,4,-1,0,0,0,4,0,0,0,0,4,0,0,0,0,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1
+		,48,5,6,0,3,49,0,9,4,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16
+		,3,32,-96,36,1,48,5,7,0,3,1,0,9,4,12,3,0,0,4,17,3,0,0,4,18,3,0,0,4,66,-100,0,0,4,2,3,0,0,4,53,1,0,0,0,3,17,0,9,4,79,3,0,0,4,-125,0,0,0,0,3,20,0
+		,9,4,7,0,0,0,4,-80,3,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,8,0,3,22,0,9,4,-73,3,0,0,4,-91,3,0,0,4,113,17,1,0,4,84,-61,0,0,4,91,-100,0
+		,0,4,74,-100,0,0,4,12,3,0,0,4,-43,1,0,0,4,-44,2,0,0,4,16,3,0,0,4,-78,2,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,9,0,3,54,0,9,4,1,0
+		,0,0,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,45,0,0,0,8,100,0,0,0,1,0,0,0,6,0,0,0,24
+		,0,0,0,16,3,32,-110,36,0,48,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0,0,0,0,0,0,34,0,0,0,8,61,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32,-105,36,0,48,3
+		,3,3,0,0,0,-120,19,0,0,0,0,23,0,0,0,8,62,0,0,0,1,0,0,0,1,0,0,0,6,0,0,0,75,2,32,-105,36,0,0,29,0,0,0,0,100,0,0,0,2,0,0,0,-128,0,0,0,-28,52,-9
+		,22,7,-61,-19,17,-125,-24,0,80,86,-100,-52,-115,0,0,0];
+	END_MODULE
+
+	MODULE $NoName (
+		Parent := "S001PRBDV",
+	            ParentModPortId := 1,
+	            CatalogNumber := "RHINOBP-DRIVE-PERIPHERAL-MODULE",
+	            Vendor := 1,
+	            ProductType := 0,
+	            ProductCode := 28,
+	            Major := 1,
+	            Minor := 1,
+	            UserDefinedVendor := 1,
+	            UserDefinedProductType := 143,
+	            UserDefinedProductCode := 33184,
+	            UserDefinedMajor := 2,
+	            UserDefinedMinor := 5,
+	            Slot := 14,
+	            Mode := 2#0000_0000_0000_0000,
+	            CompatibleModule := 0,
+	            KeyMask := 2#0000_0000_0000_0000,
+	            ShutdownParentOnFault := 0,
+	            DrivesADCMode := 1,
+	            DrivesADCEnabled := 0,
+	            UserDefinedCatalogNumber := "DeviceLogix")
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>RHINOBP-DRIVE-PERIPHERAL-MODULE</CatNum><Port14DeviceDefinition>0001000000A000000081000100000000000100010502    0001050200010000</Port14DeviceDefinition><Port14CCV>0</Port14CCV><Port14CCVInfo>1,0,0,0,0,0,0,0,0,</Port14CCVInfo><Port14HLP_Size>1001</Port14HLP_Size><Port14HLP_DataBlock1>1F00030000000100080000000100010006F90000CC000200000000002800C7030000050000BC030000050000000104000000000000006514000000C9010300000000000038010500000001010100006679030000080000000A000000184F70656E206C6F6F7020456E61626C652072657175657374080000000B000000114869676820537065656420456E61626C65080000000C0000001452756E20526576657273652066726F6D20504C43080000000D0000001B456E636F64657220436F756E7420446F776E2066726F6D20504C43090000000100000014506F736974696F6E204C6F6F7020656E61626C6509000000020000001B496E64657820746F20636F6D6D616E64656420706F736974696F6E0A000000010000001C496E7465726E616C204C6F77207370656564207265666572656E63650A0000000200000018504C432048696768207370656564207265666572656E63650A0000000300000016504C4320506F736974696F6E207265666572656E63650A000000040000001C546F72717565206C696D697420736574706F696E74206E6F726D616C0A0000000500000021546F72717565206C696D6974207265647563656420666F72207472616E736665720A0000000600000017446563656C20496E657274696120436F6D70206761696E0A000000070000001A436F646564207261696C206C6F77206C696D697420696E7075740A000000080000001B436F646564207261696C2048696768206C696D697420696E7075740F0300002400000021466F7277617264207370656564206C696D697420506172616D65746572203738350F030000250000002152657665727365207370656564206C696D697420506172616D65746572203738360F030000260000001C507265736574207370656564203120506172616D65746572203537310F0300002B0000001F546F72717565204C696D697420506C757320506172616D65746572203637300F0300002C00000020546F72717565204C696D6974206D696E757320506172616D65746572203637310F0300002D00000024446563656C20496E657274696120436F6D70204761696E20506172616D657465203639370F0300003000000025506F736974696F6E206C6F6F70207265666572656E636520506172616D65746572203738300F030000310000002750545020636F6E74726F6C20636F6D6D616E6420506172616D657465722037373020626974203600000100300000001E496E746572706F6C6174656420706F736974696F6E20666565646261636B00000100310000001C436F646564205261696C20706F736974696F6E20666565646261636B020A00000001000000000000000000680400000000000000000000</Port14HLP_DataBlock1><Port14Type>DeviceLogix</Port14Type><ConfigID>100</ConfigID><CustomizationCode>0</CustomizationCode><CustomizationVersion>0.0</CustomizationVersion><DLX_0>HwADAAAAAQAIAAAAAQABAAb5AADMAAIAAAAAACgAxwMAAAUAALwDAAAFAAAAAQQAAAAAAAAAZRQAAADJAQMAAAAAAAA4AQUAAAABAQEAAGZ5AwAACAAAAAoAAAAYT3BlbiBsb29wIEVuYWJsZSByZXF1ZXN0CAAAAAsAAAARSGlnaCBTcGVlZCBFbmFibGUIAAAADAAAABRSdW4gUmV2ZXJzZSBmcm9tIFBMQwgAAAANAAAAG0VuY29kZXIgQ291bnQgRG93biBmcm9tIFBMQwkAAAABAAAAFFBvc2l0aW9uIExvb3AgZW5hYmxlCQAAAAIAAAAbSW5kZXggdG8gY29tbWFuZGVkIHBvc2l0aW9uCgAAAAEAAAAcSW50ZXJuYWwgTG93IHNwZWVkIHJlZmVyZW5jZQoAAAACAAAAGFBMQyBIaWdoIHNwZWVkIHJlZmVyZW5jZQoAAAADAAAAFlBMQyBQb3NpdGlvbiByZWZlcmVuY2UKAAAABAAAABxUb3JxdWUgbGltaXQgc2V0cG9pbnQgbm9ybWFsCgAAAAUAAAAhVG9ycXVlIGxpbWl0IHJlZHVjZWQgZm9yIHRyYW5zZmVyCgAAAAYAAAAXRGVjZWwgSW5lcnRpYSBDb21wIGdhaW4KAAAABwAAABpDb2RlZCByYWlsIGxvdyBsaW1pdCBpbnB1dAoAAAAIAAAAG0NvZGVkIHJhaWwgSGlnaCBsaW1pdCBpbnB1dA8DAAAkAAAAIUZvcndhcmQgc3BlZWQgbGltaXQgUGFyYW1ldGVyIDc4NQ8DAAAlAAAAIVJldmVyc2Ugc3BlZWQgbGltaXQgUGFyYW1ldGVyIDc4Ng8DAAAmAAAAHFByZXNldCBzcGVlZCAxIFBhcmFtZXRlciA1NzEPAwAAKwAAAB9Ub3JxdWUgTGltaXQgUGx1cyBQYXJhbWV0ZXIgNjcwDwMAACwAAAAgVG9ycXVlIExpbWl0IG1pbnVzIFBhcmFtZXRlciA2NzEPAwAALQAAACREZWNlbCBJbmVydGlhIENvbXAgR2FpbiBQYXJhbWV0ZSA2OTcPAwAAMAAAACVQb3NpdGlvbiBsb29wIHJlZmVyZW5jZSBQYXJhbWV0ZXIgNzgwDwMAADEAAAAnUFRQIGNvbnRyb2wgY29tbWFuZCBQYXJhbWV0ZXIgNzcwIGJpdCA2AAABADAAAAAeSW50ZXJwb2xhdGVkIHBvc2l0aW9uIGZlZWRiYWNrAAABADEAAAAcQ29kZWQgUmFpbCBwb3NpdGlvbiBmZWVkYmFjawIKAAAAAQAAAAAAAAAAAGgEAAAAAAAAAAAAAAA=</DLX_0></public>___]]]
+			ConfigData := [8,6,1];
+			ConfigScript (Size := 1448) := [-92,5,0,0,4,0,0,0,0,0,0,0,0,0,0,0,25,0,0,0,8,-106,0,0,0,1,0,0,0,1,0,0,0,8,0,0,0,75,2,32,-110,36,0,-1,-1,0,0,0,-41,4,0,0,8,31,0,0,0,1,0,0,0,1,0,0
+		,0,74,0,0,0,16,3,32,-96,36,1,48,5,2,0,3,0,0,2,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,3,0,1,0,0,31,36,2,0,16,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0,32,0
+		,32,0,32,0,32,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,4,0,46,13,0,2,10,0,-128,5,3,33,0,14,3,36,1
+		,0,46,13,0,2,10,0,-128,5,3,33,0,62,3,36,0,0,46,13,0,2,8,0,-128,81,2,32,55,36,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32
+		,-96,36,1,48,5,5,0,46,13,0,2,33,0,-128,76,2,32,55,36,1,78,2,0,0,5,0,0,6,1,101,110,103,-38,4,0,9,83,67,78,95,67,70,71,95,49,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,6,0,46,13,0,2,59,0,0,80,2,32,55,36,1,0,0,63,5,0,0,0,1,4,-17,-16
+		,-12,-15,-69,101,20,-17,-16,-55,1,3,-12,-13,56,-3,1,-18,-14,1,1,0,0,102,121,-22,2,0,8,-17,-16,10,-17,-16,24,79,112,-1
+		,101,110,32,108,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,7,0,46,13,0,2,59,1,0,111,111,112,32,-1,69,110,97,98,108,101,32,114,-65
+		,101,113,117,101,115,116,25,1,11,-2,-17,-16,17,72,105,103,104,32,83,79,112,101,101,100,43,4,25,1,12,-17,-16,-1,20,82
+		,117,110,32,82,101,118,-1,101,114,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,8,0,46,13,0,2,59,2,0,115,101,32,102,114,111,95,109
+		,32,80,76,67,25,1,13,-17,-16,-1,27,69,110,99,111,100,101,114,-1,32,67,111,117,110,116,32,68,-105,111,119,110,104,6
+		,9,-17,-15,89,1,80,-1,111,115,105,116,105,111,110,32,-91,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,9,0,46,13,0,2,57,3,-128,76,40
+		,1,101,45,2,-107,1,2,118,1,73,-1,110,100,101,120,32,116,111,32,-33,99,111,109,109,97,-68,0,100,32,-15,112,-97,4,29,1
+		,-103,1,28,73,110,116,-33,101,114,110,97,108,-90,0,119,32,-3,115,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,10,0,46,13,0,2,59
+		,0,0,80,2,32,55,36,1,1,1,73,2,114,101,102,101,114,101,-89,110,99,101,29,1,-74,1,24,110,0,32,20,67,2,-20,15,0,2,1,22,4,17,-98
+		,6,-14,10,-34,-13,-15,28,84,111,114,53,0,32,108,-1,105,109,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,11,0,46,13,0,2,59,1,0,105,116
+		,32,115,101,116,-9,112,111,105,-123,0,110,111,114,109,-45,97,108,29,1,-18,-15,33,68,26,114,101,-9,100,117,99,75,0
+		,102,111,114,32,-97,116,114,97,110,115,-12,0,29,1,6,-2,-17,-16,23,68,101,99,101,1,0,0,0,74,0,0,0,16,3,32,-96,36,1,48,5,12
+		,0,46,13,0,2,59,2,0,108,32,127,73,110,101,114,116,105,97,-127,0,-65,109,112,32,103,97,105,-43,2,7,-26,-17,-16,26,67,125
+		,0,-16,0,97,105,108,-6,38,0,119,74,20,105,110,112,117,116,68,29,1,25,1,27,-77,24,67,2,-62,24,1,0,0,0,74,0,0,0,16,3,32,-96,36
+		,1,48,5,13,0,46,13,0,2,57,3,-128,15,2,0,-3,36,101,17,70,111,114,119,97,114,-7,100,12,20,75,19,80,97,114,97,109,-67,101,-31
+		,0,32,55,56,53,-15,17,37,80,101,17,97,5,2,47,20,35,54,-15,17,38,-37,1,-89,80,114,101,81,0,0,1,0,0,0,74,0,0,0,16,3,32,-96,36,1
+		,48,5,14,0,46,13,0,2,59,0,0,80,2,32,55,36,1,2,2,16,12,20,49,13,40,53,-85,55,49,-15,17,43,-17,-16,31,68,20,76,-18,9,35,108,117
+		,115,13,40,54,55,48,-22,-15,17,44,-17,-16,32,115,42,109,105,110,-44,-126,44,105,34,45,-17,1,0,0,0,74,0,0,0,16,3,32,-96
+		,36,1,48,5,15,0,46,13,0,2,59,1,0,-16,36,-109,31,32,71,-68,-89,16,13,38,32,54,57,55,-15,17,48,-126,-17,-16,37,-98,6,39,2,-14
+		,6,13,42,-111,34,49,-34,-17,-16,39,80,84,80,-61,0,110,116,-25,114,111,108,-61,5,13,41,55,48,32,-91,98,1,0,0,0,74,0,0,0,16
+		,3,32,-96,36,1,48,5,16,0,46,13,0,2,52,2,-128,78,16,54,-105,1,-20,33,30,-33,2,112,111,111,108,97,116,-53,8,32,102,74,0,79
+		,98,97,99,107,-105,1,26,49,28,-77,19,73,82,-70,17,92,62,2,-42,5,-12,-13,104,-13,-11,51,32,0,0,0,0,0,0,0,0,45,0,0,0,8,100,0,0
+		,0,1,0,0,0,6,0,0,0,24,0,0,0,16,3,32,-110,36,0,48,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,64,0,0,0,0,0,0,34,0,0,0,8,61,0,0,0,1,0,0,0,1,0,0,0,9,0,0,0,16,3,32
+		,-105,36,0,48,3,3,3,0,0,0,-120,19,0,0,0,0,23,0,0,0,8,62,0,0,0,1,0,0,0,1,0,0,0,6,0,0,0,75,2,32,-105,36,0,0,29,0,0,0,0,100,0,0,0,2,0,0,0,-128
+		,0,0,0,88,80,-3,65,98,-54,17,-24,-100,108,32,71,71,-56,38,-126,0,0,0];
+	END_MODULE

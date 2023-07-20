@@ -1,0 +1,133 @@
+
+
+
+	MODULE ENBT (Parent := "Local",
+	             ParentModPortId := 1,
+	             CatalogNumber := "1756-ENBT/A",
+	             Vendor := 1,
+	             ProductType := 12,
+	             ProductCode := 58,
+	             Major := 5,
+	             Minor := 1,
+	             PortLabel := "RxBACKPLANE",
+	             Slot := 3,
+	             NodeAddress := "192.168.0.20",
+	             CommMethod := 536870914,
+	             Mode := 2#0000_0000_0000_0000,
+	             CompatibleModule := 1,
+	             KeyMask := 2#0000_0000_0001_1111)
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>1756-ENBT</CatNum><ConfigID>4325481</ConfigID></public>___]]]
+	END_MODULE
+
+	MODULE DXM2 (Parent := "ENBT",
+	             ParentModPortId := 2,
+	             CatalogNumber := "ETHERNET-MODULE",
+	             Vendor := 1,
+	             ProductType := 0,
+	             ProductCode := 18,
+	             Major := 1,
+	             Minor := 1,
+	             PortLabel := "ENet",
+	             NodeAddress := "192.168.0.1",
+	             CommMethod := 536870915,
+	             ConfigMethod := 8388611,
+	             Mode := 2#0000_0000_0000_0000,
+	             CompatibleModule := 0,
+	             KeyMask := 2#0000_0000_0000_0000,
+	             PrimCxnInputSize := 456,
+	             PrimCxnOutputSize := 456,
+	             SecCxnInputSize := 0,
+	             SecCxnOutputSize := 0)
+			ConfigData (Class := Standard) := [4,128,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+			CONNECTION Standard (Rate := 150000,
+			                     InputCxnPoint := 100,
+			                     InputSize := 456,
+			                     OutputCxnPoint := 112,
+			                     OutputSize := 456,
+			                     EventID := 0,
+			                     Unicast := Yes)
+					InputData (COMMENT.DATA[0] := "PTL #2",
+            COMMENT.DATA[1] := "PTL #3",
+            COMMENT.DATA[2] := "PTL #4",
+            COMMENT.DATA[3] := "PTL #5",
+            Class := Standard) := [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+					OutputData (Class := Standard) := [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+			END_CONNECTION
+
+	END_MODULE
+
+	MODULE FRM_P1_ESW1 (Parent := "Local",
+	                    ParentModPortId := 2,
+	                    CatalogNumber := "1783-ZMS24TA",
+	                    Vendor := 1,
+	                    ProductType := 12,
+	                    ProductCode := 307,
+	                    Major := 10,
+	                    Minor := 1,
+	                    PortLabel := "ENet",
+	                    NodeAddress := "10.17.99.15",
+	                    Mode := 2#0000_0000_0000_0000,
+	                    CompatibleModule := 1,
+	                    KeyMask := 2#0000_0000_0001_1111)
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>1783-ZMS24TA</CatNum><ConfigID>9008</ConfigID></public>___]]]
+			ConfigData := [316,193,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0];
+			CONNECTION Output (Rate := 1000000,
+			                   EventID := 0,
+			                   Unicast := Yes)
+					InputData (Class := Standard) := [-1,1843199,0,0,0,0,3,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3];
+			END_CONNECTION
+
+	END_MODULE
+
+	MODULE FRM_P1_ESW2 (Parent := "Local",
+	                    ParentModPortId := 2,
+	                    CatalogNumber := "1783-ZMS24TA",
+	                    Vendor := 1,
+	                    ProductType := 12,
+	                    ProductCode := 307,
+	                    Major := 10,
+	                    Minor := 1,
+	                    PortLabel := "ENet",
+	                    NodeAddress := "10.17.99.16",
+	                    Mode := 2#0000_0000_0000_0000,
+	                    CompatibleModule := 1,
+	                    KeyMask := 2#0000_0000_0001_1111)
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>1783-ZMS24TA</CatNum><ConfigID>9008</ConfigID></public>___]]]
+			ConfigData := [316,193,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0];
+			CONNECTION Output (Rate := 1000000,
+			                   EventID := 0,
+			                   Unicast := Yes)
+					InputData (Class := Standard) := [-1,12287,0,0,0,4,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2];
+			END_CONNECTION
+
+	END_MODULE
+
+
+
+
+
+	MODULE BIW_DC (Parent := "Local",
+	               ParentModPortId := 2,
+	               CatalogNumber := "1756-L82E",
+	               Vendor := 1,
+	               ProductType := 14,
+	               ProductCode := 165,
+	               Major := 32,
+	               Minor := 1,
+	               PortLabel := "ENet",
+	               NodeAddress := "10.17.99.190",
+	               Mode := 2#0000_0000_0000_0000,
+	               CompatibleModule := 0,
+	               KeyMask := 2#0000_0000_0000_0000)
+			ExtendedProp := [[[___<public><ConfigID>100</ConfigID><CatNum>1756-L82E</CatNum></public>___]]]
+	END_MODULE

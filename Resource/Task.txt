@@ -1,0 +1,49 @@
+	TASK MainTask (Type := CONTINUOUS,
+	               Class := Standard,
+	               Rate := 30,
+	               Priority := 10,
+	               Watchdog := 500,
+	               DisableUpdateOutputs := No,
+	               InhibitTask := No)
+			Z005_040;
+			Z050_080;
+			S005TL1;
+			S010TL1;
+			S015RT1;
+			S019TO1;
+			S001CNV1;
+			S050TT1;
+			S050TL1;
+			S005RB01;
+			S005RB02;
+			S010RB01;
+			S010RB02;
+			S020RB01;
+			S020RB02;
+			LMIS;
+			HMI;
+			MES_BIW;
+	END_TASK
+
+	TASK SafetyTask (Type := PERIODIC,
+	                 Class := Safety,
+	                 Rate := 20,
+	                 Priority := 1,
+	                 Watchdog := 20,
+	                 DisableUpdateOutputs := No,
+	                 InhibitTask := No)
+			sZ005_040;
+			sZ050_080;
+			S005TL1Sfty;
+			S010Sfty;
+			S015RT1Sfty;
+			S015RT2Sfty;
+			S017Sfty;
+			S018Sfty;
+			S019Sfty;
+			S020Sfty;
+			S030Sfty;
+			S040Sfty;
+			S001CNV1Sfty;
+			S050TT1Sfty;
+	END_TASK
