@@ -1,0 +1,31 @@
+	MODULE S005RFID (
+		Description := "RFID Antenna",
+	                 Parent := "Local",
+	                 ParentModPortId := 2,
+	                 Vendor := 808,
+	                 ProductType := 12,
+	                 ProductCode := 33379,
+	                 Major := 1,
+	                 Minor := 10,
+	                 PortLabel := "ENet",
+	                 NodeAddress := "10.17.99.25",
+	                 Mode := 2#0000_0000_0000_0000,
+	                 CompatibleModule := 1,
+	                 KeyMask := 2#0000_0000_0001_1111,
+	                 SafetyEnabled := 0)
+			ExtendedProp := [[[___<public><PL>01<Version Name=$Q1.1$Q/><Connection Name=$Q_200424012C642C65$Q Format=$Q0$Q/></PL><Vendor>SICK AG</Vendor><CatNum></CatNum></public>___]]]
+			CONNECTION _200424012C642C65 (Rate := 20000,
+			                              InputSize := 36,
+			                              OutputSize := 32,
+			                              EventID := 0,
+			                              Priority := Scheduled,
+			                              InputConnectionType := Unicast,
+			                              InputProductionTrigger := Cyclic,
+			                              ConnectionPath := "20 04 24 01 2c 64 2c 65",
+			                              InputTagSuffix := "I",
+			                              OutputTagSuffix := "O")
+					InputData (Class := Standard) := [2,[5,0,0,36,34,0,25,32,51,48,51,50,51,50,51,48,51,56,51,48,51,56,51,48,51,56,51,48,51,49,51,54]];
+					OutputData (Class := Standard) := [[0,0,0,36,34,0,25,32,48,48,48,49,32,48,48,48,50,32,48,48,48,54,32,48,48,53,50,32,48,48,48,49]];
+			END_CONNECTION
+
+	END_MODULE

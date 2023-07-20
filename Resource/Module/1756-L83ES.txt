@@ -1,0 +1,17 @@
+	MODULE Local (
+		Parent := "Local",
+	              ParentModPortId := 1,
+	              CatalogNumber := "1756-L83ES",
+	              Vendor := 1,
+	              ProductType := 14,
+	              ProductCode := 213,
+	              Major := 33,
+	              Minor := 15,
+	              ChassisSize := 13,
+	              Slot := 0,
+	              Mode := 2#0000_0000_0000_0001,
+	              CompatibleModule := 0,
+	              KeyMask := 2#0000_0000_0000_0000,
+	              SafetyNetwork := 16#0000_4446_03c8_b4e1,
+	              SafetyNetworkPort2 := 16#0000_4446_03c8_b4e2)
+	END_MODULE

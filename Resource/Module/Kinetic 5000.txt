@@ -1,0 +1,59 @@
+	MODULE S050TT1SRV1 (
+		Parent := "FRM_P1_LOCAL",
+	                    ParentModPortId := 2,
+	                    CatalogNumber := "2198-H025-ERS2",
+	                    Vendor := 1,
+	                    ProductType := 45,
+	                    ProductCode := 4,
+	                    Major := 7,
+	                    Minor := 1,
+	                    PortLabel := "ENet",
+	                    NodeAddress := "192.168.1.50",
+	                    Mode := 2#0000_0000_0000_0000,
+	                    CompatibleModule := 1,
+	                    KeyMask := 2#0000_0000_0001_1111,
+	                    SafetyNetwork := 16#0000_43fe_0186_dd24,
+	                    SafetyEnabled := 1)
+			ExtendedProp := [[[___<public><Vendor>Rockwell Automation/Allen-Bradley</Vendor><CatNum>2198-H025-ERS2</CatNum><FeedbackDevice1>1</FeedbackDevice1><ConfigID>50331751</ConfigID></public>___]]]
+			ConfigData := [380,3,257,4,430572647,0,2565904,131588,1,0,0,0,0,0,0,0,0,-1027080192,0,0,0,0,0,0,0,524296000,524296000,524296000
+		,524296000,0,0,1,0,0,460,-65536,1045220557,0,0,0,0,1120403456,1120403456,0,1120403456,1124859904,0,0,1120403456
+		,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,1,0,8192000,8192125,1034,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+			SafetyScript (Size := 59) := [55,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,39,0,0,0,0,0,0,0,0,3,0,0,0,25,0,0,0,0,0,0,18,0,0,0,0,0,0,0,0,-19,38,-66,60,-9,117,4,24,68,0,0,0,0,0];
+			CONNECTION AMotionDiagnostics (Rate := 1000,
+			                               EventID := 0)
+					InputData (Class := Standard) := [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,44,48,5000,5000,10000];
+			END_CONNECTION
+
+			CONNECTION BMotionSync (Rate := 2000,
+			                        EventID := 0)
+			END_CONNECTION
+
+			CONNECTION CSafety_Output (Rate := 20000,
+			                           OutputSize := 1,
+			                           EventID := 0,
+			                           TimeoutMultiplier := 2,
+			                           NetworkDelayMultiplier := 200,
+			                           ReactionTimeLimit := 60,
+			                           Priority := High,
+			                           InputConnectionType := Unicast,
+			                           InputProductionTrigger := Application,
+			                           ConnectionPath := "20 04 25 00 60 03 20 04 25 00 80 01 20 04 24 c7",
+			                           OutputTagSuffix := "SO")
+					OutputData (Class := Safety) := [0];
+			END_CONNECTION
+
+			CONNECTION DSafety_Input (Rate := 10000,
+			                          InputSize := 5,
+			                          EventID := 0,
+			                          TimeoutMultiplier := 2,
+			                          NetworkDelayMultiplier := 200,
+			                          ReactionTimeLimit := 40.064,
+			                          Priority := High,
+			                          InputConnectionType := Unicast,
+			                          InputProductionTrigger := Application,
+			                          ConnectionPath := "20 04 25 00 60 03 20 04 24 c7 20 04 25 00 a0 01",
+			                          InputTagSuffix := "SI")
+					InputData (Class := Safety) := [2,0];
+			END_CONNECTION
+
+	END_MODULE

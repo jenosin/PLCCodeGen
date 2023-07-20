@@ -1,0 +1,17 @@
+	MODULE BiWCGlx_P1:Partner (
+			Parent := "Local",
+	                           ParentModPortId := 1,
+	                           CatalogNumber := "1756-L8SP",
+	                           Vendor := 1,
+	                           ProductType := 14,
+	                           ProductCode := 171,
+	                           Major := 33,
+	                           Minor := 15,
+	                           PortLabel := "RxBACKPLANE",
+	                           Slot := 1,
+	                           Mode := 2#0000_0000_0000_0000,
+	                           CompatibleModule := 0,
+	                           KeyMask := 2#0000_0000_0001_1111,
+	                           SafetyNetwork := 16#0000_0000_0000_0000)
+			ExtendedProp := [[[___<public><ConfigID>100</ConfigID><CatNum>1756-L8SP</CatNum></public>___]]]
+	END_MODULE
