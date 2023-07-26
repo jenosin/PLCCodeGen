@@ -1,0 +1,42 @@
+		ROUTINE s_E00_RB01 (Description := "Robot Safety Standard Routine")
+				RC: "############################$N"
+				    "Station Station_Name RB01$N"
+				    "Fanuc Robot Enet Safety$N"
+				    "############################";
+				N: COP(Robot_Name:SI.Input[0],Robot_NameSfty.I,1);
+				N: XIC(Robot_Name:SI.RunMode)OTE(Robot_NameSfty.Int.ModRunMode);
+				N: XIC(Robot_Name:SI.ConnectionFaulted)OTE(Robot_NameSfty.Int.ModConnFltd);
+				RC: "############################$N"
+				    "BIW Controls$N"
+				    "Robot Safety Output Edit$N"
+				    "############################";
+				N: NOP();
+				RC: "############################$N"
+				    "If Robot needs to be stopped when the Operator Safety zone is not Active, $N"
+				    "add the station(s) safety devices.$N"
+				    "############################";
+				N: XIC(Station_NameSfty.AllStaLtScrnOK)OTE(Robot_NameSfty.Int.AreaSafe);
+				N: OTE(Robot_NameSfty.Int.Zn1LtScrnActive);
+				N: OTE(Robot_NameSfty.Int.Zn2LtScrnActive);
+				N: OTE(Robot_NameSfty.Int.Zn3LtScrnActive);
+				N: OTE(Robot_NameSfty.Int.Zn4LtScrnActive);
+				N: OTE(Robot_NameSfty.Int.Zn5LtScrnActive);
+				N: OTE(Robot_NameSfty.Int.Zn6LtScrnActive);
+				N: OTE(Robot_NameSfty.Int.Zn7LtScrnActive);
+				N: XIC(sEdit.Bit)OTE(Robot_NameSfty.Int.AutoOrMan);
+				N: XIC(sEdit.Bit)OTE(Robot_NameSfty.Int.AdjRbtsTeachOff);
+				N: XIC(sEdit.Bit)OTE(Robot_NameSfty.Int.TeachPerm);
+				N: XIC(sSftyFromStd.DisblDrvsRobot_Name)OTE(Robot_NameSfty.Int.DisableDrives);
+				N: XIC(sSftyFromStd.RstDcsChngRobot_Name)OTE(Robot_NameSfty.Int.RstSftyChange);
+				RC: "############################$N"
+				    "BIW Controls$N"
+				    "Robot Safety AOI$N"
+				    "############################";
+				N: RobotSftyAOI(sR01AOI,Robot_NameSfty,sZone_Name,sSftyFromStd);
+				RC: "############################$N"
+				    "BIW Controls$N"
+				    "Robot Safety Output Map$N"
+				    "############################";
+				N: COP(Robot_NameSfty.O,Robot_Name:SO.Output[0],8);
+		END_ROUTINE
+		

@@ -42,7 +42,7 @@ class Hardware_view:
 		self.module_frame = ttk.Frame(self.frame, width=350, height=400, borderwidth=0, relief="flat")
 		self.module_frame.grid(row=1,column=0,columnspan = 2, padx=10,pady=5,sticky="nsew")
 		for i in range(2):
-			self.module_frame.grid_columnconfigure(i,weight=0)
+			self.module_frame.grid_columnconfigure(i,weight=1)
 		for i in range(15):
 			self.module_frame.grid_rowconfigure(i,weight=0)			
 		self.save_button = tk.Button(self.frame, text="Save Changes", command=self.controller.save_changes)
@@ -60,11 +60,13 @@ class Hardware_view:
 		self.scrollbar.pack(side="right", fill="y")
 		self.treeview = ttk.Treeview(self.treeview_frame, yscrollcommand=self.scrollbar.set)
 		self.treeview.pack(side="left", fill="both", expand=True)
-		self.treeview["columns"] = ("Module","IP")
+		self.treeview["columns"] = ("Module","IP","Parent")
 		self.treeview.heading("#0", text="Name")
 		self.treeview.heading("Module", text="Module")
 		self.treeview.heading("IP", text="IP")
+		self.treeview.heading("Parent",text="Parent")
 		self.treeview.bind("<<TreeviewSelect>>", self.controller.on_select_tree)
+		self.treeview.bind("<Delete>", self.controller.delete_config_pb)
 		self.scrollbar.config(command=self.treeview.yview)
 		self.save_tree_button = tk.Button(self.tree_frame, text="Save Configuration", command=self.controller.save_config)
 		self.save_tree_button.grid(row=1, column=1, padx=10, pady=5,sticky="e")
@@ -74,11 +76,13 @@ class Hardware_view:
 		self.modify_item_button.grid(row=1, column=0, padx=10, pady=5,sticky="w")
 		self.delete_item_button = tk.Button(self.tree_frame, text="Delete Selection", command=self.controller.delete_config)
 		self.delete_item_button.grid(row=2, column=0, padx=10, pady=5,sticky="w")
-
+		self.gen_button = tk.Button(self.tree_frame, text="Generate Modules", command=lambda: self.controller.hardware_gencode(self.treeview))
+		self.gen_button.grid(row=3, column=1, padx=10, pady=5,sticky="e")
 
 		# 创建信息显示区域框架和内容
 		self.info_frame = ttk.Frame(self.info_grid, width=900, height=100,borderwidth=1, relief="groove")
 		self.info_frame.pack(side="left", fill="both", expand=True)
+		self.info_frame.pack_propagate(False)
 
 		self.labels = []
 		self.entries = []
@@ -106,7 +110,7 @@ class Hardware_view:
 
 		if module_name not in saved_modules:
 			if parent_name == "Local":
-				parent_node = self.treeview.insert("", "end", text=module_name, values=(module_type,ip_add))
+				parent_node = self.treeview.insert("", "end", text=module_name, values=(module_type,ip_add,parent_name))
 				saved_modules.append(module_name)
 			else:
 				# 查找父节点的引用
@@ -118,7 +122,7 @@ class Hardware_view:
 
 				# 如果父节点存在，则添加为子节点
 				if parent_node:
-					self.treeview.insert(parent_node, "end", text=module_name, values=(module_type,ip_add))
+					self.treeview.insert(parent_node, "end", text=module_name, values=(module_type,ip_add,parent_name))
 					self.treeview.item(parent_node, open=True)
 					saved_modules.append(module_name)	
 
@@ -138,7 +142,7 @@ class Hardware_view:
 				self.entry_fields["Parent"].insert(tk.END, self_name)	
 
 
-	def show_data(self, module_path, properties):
+	def show_data(self, properties):
 
 		for label in self.labels:
 			label.destroy()
@@ -175,12 +179,12 @@ class Hardware_view:
 		self.update_info()
 
 	def update_info(self):
-		for widget in self.info_banner.winfo_children():
+		for widget in self.info_frame.winfo_children():
 			widget.destroy()
 		
 		for message in self.info_messages:
-			label = tk.Label(self.info_banner, text=message, wraplength=400)
-			label.pack(anchor="w", padx=10, pady=5)
+			label = tk.Label(self.info_frame, text=message, wraplength=400)
+			label.pack(anchor="w", padx=10, pady=1)
 
 	def clear_info(self):
 		self.info_messages = []
@@ -197,8 +201,9 @@ class Hardware_view:
 			self.treeview.item(node, open=True)
 
 
-	def delete_tree_item(self, target_item):		
-		self.treeview.delete(target_item)
+	def delete_tree_item(self, selected_items):
+		for item in selected_items:
+			self.treeview.delete(item)
 		
 
 	def get_name(self, target_item):
@@ -221,13 +226,15 @@ class Hardware_view:
 	def clear_treeview(self):
 		self.treeview.delete(*self.treeview.get_children())
 
-
 	def ip_to_treeview(self,sheet):
 		for row in sheet.iter_rows(min_row=13, values_only=True):
 			if row[17] != None:
 				module_type = row[17]  # 列 R 的数据，即 Module Type
 				ip_address = '.'.join([str(row[5]), str(row[6]), str(row[7]), str(row[8])]) 
 				module_name = row[19]  # 列 T 的数据，即 Module Name
+				parent_name = "Unknown"
 				# 插入数据到 Treeview
-				self.treeview.insert('', 'end', text=module_name, values=(module_type, ip_address))
+				self.treeview.insert('', 'end', text=module_name, values=(module_type, ip_address, parent_name))
 
+	def get_selection(self):
+		return self.treeview.selection()

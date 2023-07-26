@@ -1,0 +1,21 @@
+		ROUTINE s_E01_TL1 (Description := "Station Fixture Safety Routine")
+				RC: "************************************************************$N"
+				    "Station Station_Name TL1$N"
+				    "************************************************************";
+				N: NOP();
+				RC: "************************************************************$N"
+				    "Minor Motion Enable$N"
+				    "************************************************************$N"
+				    "$N"
+				    "This feature is disabled by default.$N"
+				    "Use needs to be approved by Controls Department";
+				N: OTU(Station_NameSfty.MinorMtnEnbld);
+				N: XIC(sZone_Name.AllEStopsOk)[XIC(sZone_Name.PerimeterSafe) XIC(Station_NameSfty.AllStaLtScrnOK) ,XIC(sZone_Name.AnyBypassSwOn) ][XIC(Station_NameSfty.FX1.MotionEnbl) ,XIC(Station_NameSfty.FX1.SoftStartPwrOn) ]OTE(Station_NameSfty.FX1.SoftStartPwrOn);
+				N: XIC(sZone_Name.AllEStopsOk)[XIC(sZone_Name.PerimeterSafe) XIC(Station_NameSfty.AllStaLtScrnOK) ,XIC(Station_NameSfty.MinorMtnEnbld) ]OTE(Station_NameSfty.FX1.MotionEnbl);
+				RC: "Soft Start Valve Power Output$N"
+				    "************************************************************";
+				N: XIC(Station_NameSfty.FX1.SoftStartPwrOn)[OTE(sReplaceMe.SSVOutput1) ,OTE(sReplaceMe.SSVOutput2) ];
+				RC: "Valve Manifold DC Power Output$N"
+				    "************************************************************";
+				N: XIC(Station_NameSfty.FX1.MotionEnbl)[OTE(sReplaceMe.VMDCOutput1) ,OTE(sReplaceMe.VMDCOutput2) ];
+		END_ROUTINE

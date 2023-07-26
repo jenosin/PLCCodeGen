@@ -1,0 +1,17 @@
+		ROUTINE s_Z01_ZoneSftySum (Description := "Zone Safety Summary$N*Not Editable Routine*")
+				RC: "************************************************************$N"
+				    "Zone Safety Summary Routine$N"
+				    "$N"
+				    "Do NOT edit this Routine$N"
+				    "************************************************************";
+				N: NOP();
+				N: XIC(sZone_Name.GateEStopsOk)XIC(sZone_Name.AdjEStopsOk)XIC(sZone_Name.OperEStopsOk)XIC(sZone_Name.TTEStopsOK)XIC(sZone_Name.CNVEStopsOK)XIC(sZone_Name.RbtEStops1Ok)XIC(sZone_Name.RbtEStops2Ok)XIC(sZone_Name.RbtSftyEnbld1)XIC(sZone_Name.RbtSftyEnbld2)OTE(sZone_Name.AllEStopsOk);
+				N: XIC(sZone_Name.EntryLSActive)XIC(sZone_Name.ExitLSActive)XIC(sZone_Name.AccessLSActive)OTE(sZone_Name.EnExLSActive);
+				N: XIC(sZone_Name.StaGatesOk)XIC(sZone_Name.AdjGatesOk)[XIC(sZone_Name.EnExLSActive) OTE(sZone_Name.PerimeterSafe) ,OTE(sZone_Name.AllGatesOk) ];
+				N: XIC(sZone_Name.AllEStopsOk)XIC(sZone_Name.PerimeterSafe)OTE(sZone_Name.PowerEnblSetup);
+				N: [XIC(sZone_Name.AnyPowerEnblPB) ,XIC(sZone_Name.PowerEnbld) ]XIC(sZone_Name.PowerEnblSetup)OTE(sZone_Name.PowerEnbld);
+				N: XIC(sSftyFromStd.AutoCycleReady)OTE(sZone_Name.AutoCycleReady);
+				N: XIC(sSftyFromStd.AutoCycleOn)OTE(sZone_Name.AutoCycleOn);
+				N: NEQ(sSftyFromStd.Faulted,0)OTE(sZone_Name.Faulted);
+		END_ROUTINE
+		

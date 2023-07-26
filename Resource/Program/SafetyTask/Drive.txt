@@ -1,0 +1,35 @@
+		ROUTINE s_E00_TT1 
+				RC: "***********************************************************$N"
+				    "TT Setup$N"
+				    "TT Faulted$N"
+				    "Setup for diferet driver using in the Turn Table$N"
+				    "***********************************************************$N"
+				    "";
+				N: [XIC(Servo_Name:SI.SafetyFault) ,XIC(Servo_Name:SI.ConnectionFaulted) ]OTE(Station_NameSfty.Fault);
+				RC: "***********************************************************$N"
+				    "TT Enable safety ok$N"
+				    "***********************************************************$N"
+				    "";
+				N: XIO(Station_NameSfty.AnyBypassSwitchOn)XIC(sZone_Name.AllEStopsOk)XIC(sZone_Name.AllGatesOk)XIC(sZone_Name.EnExLSActive)XIC(sZone_Name.PerimeterSafe)XIC(Station_NameSfty.AllStaLtScrnOK)XIC(Station_NameSfty.LoadAssistClear)OTE(Station_NameSfty.Enable);
+				RC: "***********************************************************$N"
+				    "TT Enable with Bypass Switch selected$N"
+				    "***********************************************************$N"
+				    "";
+				N: XIC(sZone_Name.AllEStopsOk)XIC(sZone_Name.AnyBypassSwOn)OTE(Station_NameSfty.EnblBypassSwitch);
+				RC: "***********************************************************$N"
+				    "TT Ready to Run Safe$N"
+				    "***********************************************************$N"
+				    "";
+				N: XIC(Station_NameSfty.Enable)XIC(Servo_Name:SI.RunMode)XIO(Servo_Name:SI.TorqueDisabled)XIO(Station_NameSfty.Fault)OTE(Station_NameSfty.RdytoRun);
+				RC: "***********************************************************$N"
+				    "TT  safe torque OK$N"
+				    "***********************************************************$N"
+				    "";
+				N: XIC(Station_NameSfty.Enable)XIO(Servo_Name:SI.TorqueDisabled)OTE(Station_NameSfty.SafeTorqueOff);
+				N: XIC(Station_NameSfty.SafeTorqueOff)XIC(Station_NameSfty.Fault)OTE(Station_NameSfty.ResetReq);
+				RC: "************************************************************$N"
+				    "Turn Table Servo Drive$N"
+				    "************************************************************";
+				N: XIC(Station_NameSfty.ResetReq)XIC(Station_NameSfty.AnyResetPB)OTE(Servo_Name:SO.Reset);
+				N: XIC(Station_NameSfty.SafeTorqueOff)OTE(Servo_Name:SO.SafeTorqueOff);
+		END_ROUTINE

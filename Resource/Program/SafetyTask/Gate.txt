@@ -1,0 +1,34 @@
+		ROUTINE s_D00_Gates (Description := "Safety Gate Routine")
+				RC: "************************************************************$N"
+				    "Safety Gates Inputs$N"
+				    "************************************************************";
+				N: NOP();
+				RC: "************************************************************$N"
+				    "Add inpSysAutoCycleReady OTE for all applicable Gates $N"
+				    "************************************************************";
+				N: XIC(sZone_Name.AutoCycleReady)[OTE(Gate_Name.GateAOI.inpSysAutoCycleReady)];
+				RC: "************************************************************$N"
+				    "Add inpSysAutoCycleOn OTE for all applicable Gates $N"
+				    "************************************************************";
+				N: XIC(sZone_Name.AutoCycleOn)[OTE(Gate_Name.GateAOI.inpSysAutoCycleOn)];
+				RC: "************************************************************$N"
+				    "Add inpSysFaulted OTE for all applicable Gates $N"
+				    "************************************************************";
+				N: XIC(sZone_Name.Faulted)[OTE(Gate_Name.GateAOI.inpSysFaulted)];
+				RC: "************************************************************$N"
+				    "Add inpClearToUnlock OTE for all applicable Gates $N"
+				    "************************************************************";
+				N: XIC(sZone_Name.ClearToUnlock)[OTE(Gate_Name.GateAOI.inpClearToUnlock)];
+				RC: "************************************************************$N"
+				    "Safety Gates$N"
+				    "************************************************************";
+				N: NOP();
+				RC: "************************************************************$N"
+				    "Always OTU unless specified and approved by Lucid Motors Controls $N"
+				    "************************************************************";
+				N: OTU(Gate_Name.DCSTL_TestReq);
+				RC: "************************************************************$N"
+				    "Safety Gate AOI$N"
+				    "************************************************************";
+				N: XIC(Gate_Name:I.RunMode)Gate(Gate_Name.GateAOI,Gate_Name:I,Gate_Name:O,Gate_Name.DCSTL_TestReq,sZone_Name.PowerEnblSetup,sZone_Name.PowerEnbld,Gate_Name.GateAOI.inpSysAutoCycleReady,Gate_Name.GateAOI.inpSysAutoCycleOn,Gate_Name.GateAOI.inpSysFaulted,Gate_Name.GateAOI.inpClearToUnlock,sSftyFromStd.FlasherHi,sSftyFromStd.FlasherMid,sSftyFromStd.FlasherLow);
+		END_ROUTINE

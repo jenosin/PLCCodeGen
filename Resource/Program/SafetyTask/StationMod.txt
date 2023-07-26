@@ -1,0 +1,21 @@
+		ROUTINE s_B00_ModStatus (Description := "Safety Module IO Status")
+				RC: "************************************************************$N"
+				    "Station_Name Module Status$N"
+				    "************************************************************";
+				N: NOP();
+				RC: "************************************************************$N"
+				    "Module 1 Status$N"
+				    "Run Mode$N"
+				    "Input Status$N"
+				    "Output Status$N"
+				    "************************************************************";
+				N: XIC(SIO_Name:I.RunMode)OTE(Station_NameSfty.Mod1.RunMode);
+				N: XIC(SIO_Name:I.Pt00InputStatus)XIC(SIO_Name:I.Pt01InputStatus)XIC(SIO_Name:I.Pt02InputStatus)XIC(SIO_Name:I.Pt03InputStatus)XIC(SIO_Name:I.Pt04InputStatus)XIC(SIO_Name:I.Pt05InputStatus)XIC(SIO_Name:I.Pt06InputStatus)XIC(SIO_Name:I.Pt07InputStatus)XIC(SIO_Name:I.Pt08InputStatus)XIC(SIO_Name:I.Pt09InputStatus)XIC(SIO_Name:I.Pt10InputStatus)XIC(SIO_Name:I.Pt11InputStatus)OTE(Station_NameSfty.Mod1.InputStatus);
+				N: XIC(SIO_Name:I.Pt00OutputStatus)XIC(SIO_Name:I.Pt01OutputStatus)XIC(SIO_Name:I.Pt02OutputStatus)XIC(SIO_Name:I.Pt03OutputStatus)OTE(Station_NameSfty.Mod1.OutputStatus);
+				RC: "************************************************************$N"
+				    "Module Summary$N"
+				    "************************************************************";
+				N: XIC(Station_NameSfty.Mod1.RunMode)OTE(Station_NameSfty.AllModRunMode);
+				N: XIC(Station_NameSfty.Mod1.InputStatus)OTE(Station_NameSfty.AllModInStatusOk);
+				N: XIC(Station_NameSfty.Mod1.OutputStatus)OTE(Station_NameSfty.AllModOutStatusOk);
+		END_ROUTINE

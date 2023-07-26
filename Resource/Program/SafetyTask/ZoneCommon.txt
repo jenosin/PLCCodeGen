@@ -1,0 +1,10 @@
+		ROUTINE s_C00_Common 
+				RC: "************************************************************$N"
+				    "Constants$N"
+				    "************************************************************";
+				N: [XIC(sAlways_On) ,XIO(sAlways_On) ]OTE(sAlways_On);
+				N: XIC(sAlways_Off)XIO(sAlways_Off)OTE(sAlways_Off);
+				N: XIC(sEdit.Bit)OTE(sZone_Name.LightTest);
+				N: XIC(sSftyFromStd.FlasherHi)OTE(sZone_Name.sFlasher);
+				N: XIC(sSftyFromStd.SafetyInsFltRstPB)OTE(sZone_Name.SftyFltRst);
+		END_ROUTINE

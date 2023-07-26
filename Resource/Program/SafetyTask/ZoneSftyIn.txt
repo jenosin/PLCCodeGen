@@ -1,0 +1,106 @@
+		ROUTINE s_Z00_ZoneSftyIn (Description := "Zone Safety Input Mapping")
+				RC: "************************************************************$N"
+				    "Zone Safety Inputs Mapping$N"
+				    "************************************************************";
+				N: NOP();
+				RC: "************************************************************$N"
+				    "Add all zone gates stsEstopNormal signal$N"
+				    "************************************************************";
+				N: XIC(Gate_Name.GateAOI.stsEstopNormal)XIC(sNext_Zone.GateEStopsOk)OTE(sZone_Name.GateEStopsOk);
+				RC: "************************************************************$N"
+				    "Adjacent Zone Gates$N"
+				    "Delete XICs if no safety Interlocks exist$N"
+				    "************************************************************";
+				N: [XIC(PrevSftyIn.EStopsOk) XIC(NextSftyIn.EStopsOk) XIC(sNext_Zone.AdjEStopsOk) ,XIO(sEdit.Bit) ]OTE(sZone_Name.AdjEStopsOk);
+				RC: "************************************************************$N"
+				    "Add all Operator Estops$N"
+				    "Operator Load/Unload Stations$N"
+				    "Rack Load/Unload Stations$N"
+				    "************************************************************";
+				N: XIC(Station_Name.E1.Estop.O1)XIC(sNext_Zone.OperEStopsOk)OTE(sZone_Name.OperEStopsOk);
+				RC: "************************************************************$N"
+				    "Add all Operator TT Estops$N"
+				    "$N"
+				    "************************************************************";
+				N: XIC(Drive_NameSfty.E1.Estop.O1)OTE(sZone_Name.TTEStopsOK);
+				RC: "************************************************************$N"
+				    "Add all Operator CNV Estops$N"
+				    "$N"
+				    "************************************************************";
+				N: XIC(CNV_NameSfty.All_Estop_OK)OTE(sZone_Name.CNVEStopsOK);
+				RC: "************************************************************$N"
+				    "Add all Robot Estops$N"
+				    "************************************************************$N"
+				    "Use SxxxRBxxSfty.Int.EStopPBOk";
+				N: XIC(Robot_NameSfty.Int.EStopPBOk)OTE(sZone_Name.RbtEStops1Ok);
+				RC: "************************************************************$N"
+				    "Add all Robot Estops$N"
+				    "************************************************************";
+				N: XIC(Robot_NameSfty.Int.EStopPBOk)OTE(sZone_Name.RbtEStops2Ok);
+				RC: "************************************************************$N"
+				    "Add all Robot Safety Interface Enabled signal$N"
+				    "************************************************************";
+				N: XIC(Robot_NameSfty.Int.SftyIntEnbld)XIO(Robot_NameSfty.Int.SftyChanged)OTE(sZone_Name.RbtSftyEnbld1);
+				RC: "************************************************************$N"
+				    "Add all Robot Safety Interface Enabled signal$N"
+				    "************************************************************";
+				N: XIC(Robot_NameSfty.Int.SftyIntEnbld)XIO(Robot_NameSfty.Int.SftyChanged)OTE(sZone_Name.RbtSftyEnbld2);
+				RC: "************************************************************$N"
+				    "Safety Gates PushButtons$N"
+				    "************************************************************";
+				N: [XIC(Gate_Name.GateAOI.stsPowerOnPushed)]OTE(sZone_Name.StaPowerEnblPB);
+				N: [XIC(Gate_Name.GateAOI.stsBypassSwitchOn)]OTE(sZone_Name.AnyBypassSwOn);
+				N: [XIC(Gate_Name.GateAOI.stsResetPushed)]OTE(sZone_Name.StaGateRstPB);
+				N: [XIC(Gate_Name.GateAOI.stsStartPushed)]OTE(sZone_Name.StaGateStartPB);
+				N: [XIC(Gate_Name.GateAOI.stsOpenGateRequested) ]OTE(sZone_Name.StaOpenGateReqPB);
+				RC: "************************************************************$N"
+				    "Add all zone entry Safety Device$N"
+				    "************************************************************";
+				N: OTE(sZone_Name.EntryLSActive);
+				RC: "************************************************************$N"
+				    "Add all zone exit Safety Device$N"
+				    "************************************************************";
+				N: OTE(sZone_Name.ExitLSActive);
+				RC: "************************************************************$N"
+				    "Add all zone and station access lightscreens or scanners$N"
+				    "************************************************************";
+				N: XIC(sReplaceMe.LCOutput1)XIC(sReplaceMe.LCOutput2)OTE(sZone_Name.AccessLSActive);
+				RC: "************************************************************$N"
+				    "Add all Gate Locked Signals$N"
+				    "************************************************************";
+				N: XIC(Gate_Name.GateAOI.stsGateLocked)OTE(sZone_Name.StaGatesOk);
+				RC: "************************************************************$N"
+				    "Adjacent Zone Gates locked interlocks$N"
+				    "Delete XICs if no safety Interlocks exist$N"
+				    "************************************************************";
+				N: [XIC(PrevSftyIn.AllGatesOk) XIC(NextSftyIn.AllGatesOk) ,XIO(sEdit.Bit) ]OTE(sZone_Name.AdjGatesOk);
+				RC: "************************************************************$N"
+				    "Add all required Clear to Unlock signals$N"
+				    "************************************************************";
+				N: XIC(Station_NameSfty.ClearToUnlock)[XIC(PrevSftyIn.ClearToUnlock) XIC(NextSftyIn.ClearToUnlock) ,XIO(sEdit.Bit) ]OTE(sZone_Name.ClearToUnlock);
+				RC: "************************************************************$N"
+				    "Add all Robot in Teach Selected signals$N"
+				    "************************************************************";
+				N: [XIC(Robot_NameSfty.Int.TeachSeld)]OTE(sZone_Name.RbtInTeach);
+				RC: "************************************************************$N"
+				    "Add or Remove If Adjacent zones will trigger Gate Rst$N"
+				    "************************************************************";
+				N: [XIC(sZone_Name.StaGateRstPB) ,XIC(sNext_Zone.StaGateRstPB) XIC(sEdit.Bit) ]ONS(sZone_Name.GateRstOns)OTE(sZone_Name.AnyGateRstPB);
+				RC: "************************************************************$N"
+				    "Add or Remove If Adjacent zones will trigger Gate Start$N"
+				    "************************************************************";
+				N: [XIC(sZone_Name.StaGateStartPB) ,XIC(sNext_Zone.StaGateStartPB) XIC(sEdit.Bit) ]OTE(sZone_Name.AnyGateStartPB);
+				RC: "************************************************************$N"
+				    "Add or Remove If Adjacent zones will trigger Power Enable$N"
+				    "************************************************************";
+				N: [XIC(sZone_Name.StaPowerEnblPB) ,XIC(sNext_Zone.StaPowerEnblPB) XIC(sEdit.Bit) ]ONS(sZone_Name.PowerEnblOns)OTE(sZone_Name.AnyPowerEnblPB);
+				RC: "************************************************************$N"
+				    "Add or Remove If Adjacent zones will trigger Open Gate Request$N"
+				    "************************************************************";
+				N: [XIC(sZone_Name.StaOpenGateReqPB) ,XIC(sNext_Zone.StaOpenGateReqPB) XIC(sEdit.Bit) ]ONS(sZone_Name.OpenGateReqOns)OTE(sZone_Name.AnyOpenGateReqPB);
+				RC: "************************************************************$N"
+				    "Safety Interlocks mapping$N"
+				    "************************************************************";
+				N: [[XIC(PrevSftyIntlkIn.Status.ConnectionFaulted) ,XIO(PrevSftyIntlkIn.Status.RunMode) ] COP(ZeroRefSafety[0],PrevSftyIn,1) ,XIO(PrevSftyIntlkIn.Status.ConnectionFaulted) XIC(PrevSftyIntlkIn.Status.RunMode) COP(PrevSftyIntlkIn,PrevSftyIn,1) ];
+				N: [[XIC(NextSftyIntlkIn.Status.ConnectionFaulted) ,XIO(NextSftyIntlkIn.Status.RunMode) ] COP(ZeroRefSafety[0],NextSftyIn,1) ,XIO(NextSftyIntlkIn.Status.ConnectionFaulted) XIC(NextSftyIntlkIn.Status.RunMode) COP(NextSftyIntlkIn,NextSftyIn,1) ];
+		END_ROUTINE

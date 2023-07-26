@@ -1,0 +1,11 @@
+		ROUTINE s_D03_SPD (Description := "Safety Position Devices Routine")
+				RC: "************************************************************$N"
+				    "Station Station_Name Safety Position Devices$N"
+				    "************************************************************";
+				N: NOP();
+				N: XIC(SXInput1)OTE(Station_NameSfty.SftyPosDev.SPD1ChnA);
+				N: XIC(SXInput1)OTE(Station_NameSfty.SftyPosDev.SPD1ChnB);
+				N: [XIC(Station_NameSfty.Oper1SwipeStart) ,XIC(sZone_Name.AnyGateRstPB) ]ONS(Station_NameSfty.SftyPosDev.SPD1InsCROns)OTE(Station_NameSfty.SftyPosDev.SPD1InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.SftyPosDev.SPD1InsFltRst);
+				N: XIC(Station_NameSfty.AllModRunMode)RIN(Station_NameSfty.SftyPosDev.SPD1,AUTOMATIC,Station_NameSfty.SftyPosDev.SPD1ChnA,Station_NameSfty.SftyPosDev.SPD1ChnB,Station_NameSfty.SftyPosDev.SPD1InsCR,Station_NameSfty.SftyPosDev.SPD1InsFltRst);
+		END_ROUTINE

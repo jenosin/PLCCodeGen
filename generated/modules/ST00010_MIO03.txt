@@ -1,6 +1,6 @@
-    MODULE Z005_040IOL1 (
-                         Parent := PLC1,
-                         Parent := PLC1,
+    MODULE ST00010_MIO03 (
+                         Parent := Unknown,
+                         Parent := Unknown,
 	                     CatalogNumber := "BNI006A",
 	                     Vendor := 43,
 	                     ProductType := 43,
@@ -8,7 +8,7 @@
 	                     Major := 4,
 	                     Minor := 2,
 	                     PortLabel := "ENet",
-                         NodeAddress := "192.168.1.7",
+                         NodeAddress := "192.168.1.201",
 	                     Mode := 2#0000_0000_0000_0000,
 	                     CompatibleModule := 1,
 	                     KeyMask := 2#0000_0000_0001_1111,

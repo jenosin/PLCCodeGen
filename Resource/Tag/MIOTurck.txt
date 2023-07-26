@@ -1,0 +1,1 @@
+		MIO_Name : Ludt_IO_Turck (Class := Standard) := [[28672,0,0,0],0,0];

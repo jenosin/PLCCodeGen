@@ -3993,16 +3993,16 @@
 
 		ROUTINE s_D00_Estop (Description := "Emergency Stop Safety Routine")
 				RC: "************************************************************$N"
-				    "FRM007 Emergency Stop$N"
+				    "Station_Name Emergency Stop$N"
 				    "************************************************************";
 				N: NOP();
 				RC: "************************************************************$N"
 				    "E-Stop$N"
-				    "FRM007 E1$N"
+				    "Station_Name E1$N"
 				    "Map Inputs$N"
 				    "************************************************************";
-				N: XIC(S005TL1SIO1:I.Pt00Data)OTE(S005Sfty.E1.EstpChnA);
-				N: XIC(S005TL1SIO1:I.Pt01Data)OTE(S005Sfty.E1.EstpChnB);
+				N: XIC(Estop_Input1)OTE(Station_NameSfty.E1.EstpChnA);
+				N: XIC(Estop_Input2)OTE(Station_NameSfty.E1.EstpChnB);
 				N: [XIC(S005Sfty.Oper1SwipeStart) ,XIC(sZ005_040.AnyGateRstPB) ]OTE(S005Sfty.E1.EstpInstCR);
 				N: XIC(sZ005_040.SftyFltRst)OTE(S005Sfty.E1.EstpInstFltRst);
 				N: XIC(S005Sfty.AllModRunMode)ESTOP(S005Sfty.E1.Estop,MANUAL,S005Sfty.E1.EstpChnA,S005Sfty.E1.EstpChnB,S005Sfty.E1.EstpInstCR,S005Sfty.E1.EstpInstFltRst);

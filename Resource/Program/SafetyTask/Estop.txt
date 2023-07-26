@@ -1,0 +1,16 @@
+		ROUTINE s_D00_Estop (Description := "Emergency Stop Safety Routine")
+				RC: "************************************************************$N"
+				    "Station_Name Emergency Stop$N"
+				    "************************************************************";
+				N: NOP();
+				RC: "************************************************************$N"
+				    "E-Stop$N"
+				    "Station_Name E1$N"
+				    "Map Inputs$N"
+				    "************************************************************";
+				N: XIC(sEdit.bit)OTE(Station_NameSfty.E1.EstpChnA);
+				N: XIC(sEdit.bit)OTE(Station_NameSfty.E1.EstpChnB);
+				N: [XIC(Station_NameSfty.Oper1SwipeStart) ,XIC(sZone_Name.AnyGateRstPB) ]OTE(Station_NameSfty.E1.EstpInstCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.E1.EstpInstFltRst);
+				N: XIC(Station_NameSfty.AllModRunMode)ESTOP(Station_NameSfty.E1.Estop,MANUAL,Station_NameSfty.E1.EstpChnA,Station_NameSfty.E1.EstpChnB,Station_NameSfty.E1.EstpInstCR,Station_NameSfty.E1.EstpInstFltRst);
+		END_ROUTINE

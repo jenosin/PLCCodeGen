@@ -20,7 +20,7 @@ class Tags_view:
 
 		#创建模块区域框架和内容
 		self.dropdown = tk.StringVar()
-		self.dropdown.set("选择类型")
+		self.dropdown.set("选择设备类型")
 		self.dropdown_menu = tk.OptionMenu(self.module_grid, self.dropdown, *self.controller.module_list, command=self.controller.dropdown_on_select)
 		self.dropdown_menu.config(width=20,height=1)
 		self.dropdown_menu.pack(side="top",anchor="nw",padx=10,pady=5)
@@ -65,7 +65,7 @@ class Tags_view:
 
 
 	def dropdown_init(self):
-		self.dropdown.set("选择模块")
+		self.dropdown.set("选择设备类型")
 
 	def treeview_update(self,properties,saved_modules):
 		module_name = properties["MODULE"]
@@ -198,3 +198,13 @@ class Tags_view:
 
 	def clear_treeview(self):
 		self.treeview.delete(*self.treeview.get_children())
+
+	def linedata_to_treeview(self, parent, ):
+		for row in sheet.iter_rows(min_row=13, values_only=True):
+			if row[17] != None:
+				module_type = row[17]  # 列 R 的数据，即 Module Type
+				ip_address = '.'.join([str(row[5]), str(row[6]), str(row[7]), str(row[8])]) 
+				module_name = row[19]  # 列 T 的数据，即 Module Name
+				parent_name = "Unknown"
+				# 插入数据到 Treeview
+				self.treeview.insert('', 'end', text=module_name, values=(module_type, ip_address, parent_name))

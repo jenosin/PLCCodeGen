@@ -1,0 +1,11 @@
+		VM_Name : Ludt_VM_SMC (COMMENT.I1.0 := "Station_Name$NPP1_Air$N*Description*$NVM_Name.I1.0",
+		            COMMENT.I1.1 := "Station_Name$NPP1_Air$N*Description*$NVM_Name.I1.1",
+		            COMMENT.I1.2 := "Station_Name$NPP2_Air$N*Description*$NVM_Name.I1.2",
+		            COMMENT.I1.3 := "Station_Name$NPP2_Air$N*Description*$NVM_Name.I1.3",
+		            COMMENT.I1.4 := "Station_Name$NPP2_Air$N*Description*$NVM_Name.I1.4",
+		            COMMENT.I2.0 := "Station_Name$NPP1_Grav$N*Description*$NVM_Name.I2.0",
+		            COMMENT.I2.1 := "Station_Name$NPP1_Grav$N*Description*$NVM_Name.I2.1",
+		            COMMENT.I2.2 := "Station_Name$NPP1_Grav$N*Description*$NVM_Name.I2.2",
+		            COMMENT.I2.3 := "Station_Name$NPP1_Grav$N*Description*$NVM_Name.I2.3",
+		            COMMENT.I2.4 := "Station_Name$NPP1_Grav$N*Description*$NVM_Name.I2.4",
+		            Class := Standard) := [[28672,0,0,0],0,0,0,0,0];

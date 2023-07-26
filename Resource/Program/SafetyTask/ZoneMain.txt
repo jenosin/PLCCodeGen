@@ -1,0 +1,16 @@
+	PROGRAM sZone_Name (Description := "Zone Safety Task",
+	                   Class := Safety,
+	                   MAIN := "s_A00_Main",
+	                   MODE := 0,
+	                   DisableFlag := 0,
+	                   UseAsFolder := 0)
+		TAG
+		END_TAG
+
+		ROUTINE s_A00_Main 
+				N: JSR(s_C00_Common,0);
+				N: JSR(s_D00_Gates,0);
+				N: JSR(s_Z00_ZoneSftyIn,0);
+				N: JSR(s_Z01_ZoneSftySum,0);
+				N: JSR(s_Z02_ZoneSftyOut,0);
+		END_ROUTINE

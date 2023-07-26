@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk, filedialog
+import shutil
 import os
 import json
 import openpyxl
@@ -26,19 +27,22 @@ class Hardware_model:
 		with open("Resource/Module/ModuleList.txt", "r") as file:
 			self.module_list = file.readlines()		
 
-	def update_module_data(self):
-		module_name = self.properties["MODULE"]
-		parent_name = self.properties["Parent"]
+	def update_module_data(self, properties, module_base_lines):
+		module_name = properties["MODULE"]
+		parent_name = properties["Parent"]
+		node_address = properties["NodeAddress"]
+		slot = properties["Slot"]
+		parent_name = properties["Parent"]
 		updated_lines = []
-		for line in self.module_data.split('\n'):
+		for line in module_base_lines:
 			if "MODULE " in line:
-				updated_line = "    MODULE " + self.module_dict["MODULE"] + " ("
+				updated_line = "    MODULE " + module_name + " ("
 			elif "NodeAddress" in line:
-				updated_line = '                         NodeAddress := "' + self.module_dict["NodeAddress"] + '",'
+				updated_line = '                         NodeAddress := "' + node_address + '",'
 			elif "Slot " in line:
-				updated_line = '                         Slot := ' + self.module_dict["Slot"] + ','
+				updated_line = '                         Slot := ' + Slot + ','
 			elif "Parent" in line:
-				updated_line = '                         Parent := ' + self.module_dict["Parent"] + ','
+				updated_line = '                         Parent := ' + parent_name + ','
 			else:
 				updated_line = line
 			updated_lines.append(updated_line)
@@ -47,24 +51,36 @@ class Hardware_model:
 		with open(savefile, 'w') as file:
 			file.write(updated_module_data)
 
-	def parse_module_data(self, module_path):
+	def module_data_lines(self, module_path):
 		with open(module_path, "r") as file:
-			self.module_data = file.read()
-		lines = self.module_data.split('\n')
-		for line in lines:
+			module_data = file.read()
+		return module_data.split('\n')
+
+	def parse_module_data(self, module_data_lines):
+		properties = {}
+		for line in module_data_lines:
 			if "MODULE " in line:
 				key = "MODULE"
 				value = line.strip().split()[1]
-				#value = "更改模块名字"
-				self.module_dict[key] = value
+				properties[key] = value
 			elif ":=" in line:
 				key, value = line.strip().split(":=",maxsplit=1)
 				key = key.strip()
 				value = value.strip()
 				value = value.replace(",","")
 				value = value.replace('"',"")
-				self.module_dict[key] = value
-		return self.module_dict
+				properties[key] = value
+		return properties
+
+	def parse_tree_item(self, treeview):
+		selected_item = treeview.selection()
+		properties = {}
+		properties["MODULE"] = treeview.item(selected_item, "text")
+		values = treeview.item(selected_item, "values")
+		properties["CatalogNumber"] = values[0]
+		properties["NodeAddress"] = values[1]
+		properties["Parent"] = values[2]
+		return properties
 
 	def save_treeview_data(self, treeview, parent="", node_data_list=None):
 		if node_data_list is None:
@@ -84,9 +100,7 @@ class Hardware_model:
 
 		return node_data_list	  
 
-
-	def update_Parent(self,treeview,entry_fields):
-		# 获取选中的节点
+	def update_entry_Parent(self,treeview,entry_fields):
 		selected_item = treeview.selection()
 		if selected_item:
 			# 获取选中节点的父节点名称
@@ -109,3 +123,28 @@ class Hardware_model:
 		# 获取指定子表
 		sheet = wb['Local IP']
 		return sheet
+
+	def modulebase_path(self, module_type):
+		md_filename = module_type + ".txt"
+		return "Resource/Module/" + md_filename
+	
+	def moduleinst_path(self,module_name):	
+		md_filename = module_name + ".txt"
+		return "generated/modules/" + md_filename
+
+	def treeview_to_modules(self, treeview, parent=""):
+		nodes = treeview.get_children(parent)
+		properties = {}
+		for node in nodes:
+			properties["MODULE"] = treeview.item(node, "text")
+			values = treeview.item(node, "values")
+			properties["CatalogNumber"] = values[0]
+			properties["NodeAddress"] = values[1]
+			properties["Parent"] = values[2]
+			properties["Slot"] = 2
+			base_path = self.modulebase_path(values[0])
+			base_lines = self.module_data_lines(base_path)
+			self.update_module_data(properties, base_lines)
+			
+			# 递归保存子节点
+			self.treeview_to_modules(treeview, parent=node)

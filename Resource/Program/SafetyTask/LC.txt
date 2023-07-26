@@ -1,0 +1,141 @@
+		ROUTINE s_D01_LC (Description := "Light Screen and Safety Scanner Safety Routine")
+				RC: "************************************************************$N"
+				    "Safety Light Curtains and Scanners$N"
+				    "************************************************************";
+				N: NOP();
+				N: OTE(Station_NameSfty.OperLS.LC1Installed)OTE(Station_NameSfty.OperLS.LC2Installed)OTE(Station_NameSfty.OperLS.LC3Installed)OTE(Station_NameSfty.OperLS.SCN1_1Installed)OTE(Station_NameSfty.OperLS.SCN1_2Installed)OTE(Station_NameSfty.OperLS.SCN2_1Installed)OTE(Station_NameSfty.OperLS.SCN2_2Installed);
+				RC: "************************************************************$N"
+				    "LC Instruction$N"
+				    "Input Mapping$N"
+				    "************************************************************$N"
+				    "Edit all required Input mapping rungs with the correct safety input$N"
+				    "Edit LC Muting as required. Check Rung description for details";
+				N: NOP();
+				RC: "************************************************************$N"
+				    "Station_Name LC1$N"
+				    "Map Inputs$N"
+				    "************************************************************";
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.LC1ChnAInp);
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.LC1ChnBInp);
+				RC: "************************************************************$N"
+				    "LC Muting$N"
+				    "$N"
+				    "Set $QMuteInstalled$Q Bit to OTE if muting exists$N"
+				    "$N"
+				    "Change sEdit.Bit to required muting conditions.$N"
+				    "Every muting conditions shall be controlled by a safety instruction.$N"
+				    "$N"
+				    "Mutted devices require Yellow Indicator light$N"
+				    "************************************************************";
+				N: [OTU(Station_NameSfty.OperLS.LC1MuteInstalled) ,XIC(sEdit.Bit) XIC(Station_NameSfty.OperLS.LC1MuteInstalled) OTE(Station_NameSfty.OperLS.LC1Mute) ];
+				RC: "************************************************************$N"
+				    "Station_Name Scanner 1_1$N"
+				    "Map Inputs$N"
+				    "************************************************************";
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.SCN1_1ChnAInp);
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.SCN1_1ChnBInp);
+				RC: "************************************************************$N"
+				    "LC Muting$N"
+				    "$N"
+				    "Set $QMuteInstalled$Q Bit to OTE if muting exists$N"
+				    "$N"
+				    "Change sEdit.Bit to required muting conditions.$N"
+				    "Every muting conditions shall be controlled by a safety instruction.$N"
+				    "$N"
+				    "Mutted devices require Yellow Indicator light$N"
+				    "************************************************************";
+				N: [OTE(Station_NameSfty.OperLS.SCN1_1MuteInstalled) ,XIC(Station_NameSfty.SftyPosDev.SPD1.O1) XIC(Station_NameSfty.OperLS.SCN1_1MuteInstalled) OTE(Station_NameSfty.OperLS.SCN1_1Mute) ];
+				RC: "************************************************************$N"
+				    "Station_Name Scanner 1_2$N"
+				    "Map Inputs$N"
+				    "************************************************************";
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.SCN1_2ChnAInp);
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.SCN1_2ChnBInp);
+				RC: "************************************************************$N"
+				    "LC Muting$N"
+				    "$N"
+				    "Set $QMuteInstalled$Q Bit to OTE if muting exists$N"
+				    "$N"
+				    "Change sEdit.Bit to required muting conditions.$N"
+				    "Every muting conditions shall be controlled by a safety instruction.$N"
+				    "$N"
+				    "Mutted devices require Yellow Indicator light$N"
+				    "************************************************************";
+				N: [OTE(Station_NameSfty.OperLS.SCN2_1MuteInstalled) ,XIC(Station_NameSfty.SftyPosDev.SPD1.O1) XIC(Station_NameSfty.OperLS.SCN2_1MuteInstalled) OTE(Station_NameSfty.OperLS.SCN2_1Mute) ];
+				RC: "************************************************************$N"
+				    "Station_Name Scanner 2_1$N"
+				    "Map Inputs$N"
+				    "************************************************************";
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.SCN2_1ChnAInp);
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.SCN2_1ChnBInp);
+				RC: "************************************************************$N"
+				    "LC Muting$N"
+				    "$N"
+				    "Set $QMuteInstalled$Q Bit to OTE if muting exists$N"
+				    "$N"
+				    "Change sEdit.Bit to required muting conditions.$N"
+				    "Every muting conditions shall be controlled by a safety instruction.$N"
+				    "$N"
+				    "Mutted devices require Yellow Indicator light$N"
+				    "************************************************************";
+				N: [OTU(Station_NameSfty.OperLS.SCN1_2MuteInstalled) ,XIC(sEdit.Bit) XIC(Station_NameSfty.OperLS.SCN1_2MuteInstalled) OTE(Station_NameSfty.OperLS.SCN1_2Mute) ];
+				RC: "************************************************************$N"
+				    "Station_Name Scanner 2_1$N"
+				    "Map Inputs$N"
+				    "************************************************************";
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.SCN2_2ChnAInp);
+				N: XIC(sEdit.Bit)OTE(Station_NameSfty.OperLS.SCN2_2ChnBInp);
+				RC: "************************************************************$N"
+				    "LC Muting$N"
+				    "$N"
+				    "Set $QMuteInstalled$Q Bit to OTE if muting exists$N"
+				    "$N"
+				    "Change sEdit.Bit to required muting conditions.$N"
+				    "Every muting conditions shall be controlled by a safety instruction.$N"
+				    "$N"
+				    "Mutted devices require Yellow Indicator light$N"
+				    "************************************************************";
+				N: [OTU(Station_NameSfty.OperLS.SCN2_2MuteInstalled) ,XIC(sEdit.Bit) XIC(Station_NameSfty.OperLS.SCN2_2MuteInstalled) OTE(Station_NameSfty.OperLS.SCN2_2Mute) ];
+				RC: "************************************************************$N"
+				    "LC Instruction$N"
+				    "$N"
+				    "DO NOT EDIT AFTER THIS POINT$N"
+				    "************************************************************$N"
+				    "";
+				N: NOP();
+				N: [XIC(Station_NameSfty.OperLS.LC1ChnAInp) ,XIC(Station_NameSfty.OperLS.LC1Mute) XIC(Station_NameSfty.OperLS.LC1MuteInstalled) ]OTE(Station_NameSfty.OperLS.LC1ChnAInst);
+				N: [XIC(Station_NameSfty.OperLS.LC1ChnBInp) ,XIC(Station_NameSfty.OperLS.LC1Mute) XIC(Station_NameSfty.OperLS.LC1MuteInstalled) ]OTE(Station_NameSfty.OperLS.LC1ChnBInst);
+				N: XIC(Station_NameSfty.Oper1SwipeStart)ONS(Station_NameSfty.OperLS.LC1InsCROns)OTE(Station_NameSfty.OperLS.LC1InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.OperLS.LC1FltRst);
+				N: XIC(Station_NameSfty.OperLS.LC1Installed)XIC(Station_NameSfty.AllModRunMode)LC(Station_NameSfty.OperLS.LC1,MANUAL,Station_NameSfty.OperLS.LC1ChnAInst,Station_NameSfty.OperLS.LC1ChnBInst,20,Station_NameSfty.OperLS.LC1Mute,Station_NameSfty.OperLS.LC1InsCR,Station_NameSfty.OperLS.LC1FltRst);
+				N: [XIC(Station_NameSfty.OperLS.LC2ChnAInp) ,XIC(Station_NameSfty.OperLS.LC2Mute) XIC(Station_NameSfty.OperLS.LC2MuteInstalled) ]OTE(Station_NameSfty.OperLS.LC2ChnAInst);
+				N: [XIC(Station_NameSfty.OperLS.LC2ChnBInp) ,XIC(Station_NameSfty.OperLS.LC2Mute) XIC(Station_NameSfty.OperLS.LC2MuteInstalled) ]OTE(Station_NameSfty.OperLS.LC2ChnBInst);
+				N: XIC(Station_NameSfty.Oper1SwipeStart)ONS(Station_NameSfty.OperLS.LC2InsCROns)OTE(Station_NameSfty.OperLS.LC2InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.OperLS.LC2FltRst);
+				N: XIC(Station_NameSfty.OperLS.LC2Installed)XIC(Station_NameSfty.AllModRunMode)LC(Station_NameSfty.OperLS.LC2,MANUAL,Station_NameSfty.OperLS.LC2ChnAInst,Station_NameSfty.OperLS.LC2ChnBInst,20,Station_NameSfty.OperLS.LC2Mute,Station_NameSfty.OperLS.LC2InsCR,Station_NameSfty.OperLS.LC2FltRst);
+				N: [XIC(Station_NameSfty.OperLS.LC3ChnAInp) ,XIC(Station_NameSfty.OperLS.LC3Mute) XIC(Station_NameSfty.OperLS.LC3MuteInstalled) ]OTE(Station_NameSfty.OperLS.LC3ChnAInst);
+				N: [XIC(Station_NameSfty.OperLS.LC3ChnBInp) ,XIC(Station_NameSfty.OperLS.LC3Mute) XIC(Station_NameSfty.OperLS.LC3MuteInstalled) ]OTE(Station_NameSfty.OperLS.LC3ChnBInst);
+				N: XIC(Station_NameSfty.Oper1SwipeStart)ONS(Station_NameSfty.OperLS.LC3InsCROns)OTE(Station_NameSfty.OperLS.LC3InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.OperLS.LC3FltRst);
+				N: XIC(Station_NameSfty.OperLS.LC3Installed)XIC(Station_NameSfty.AllModRunMode)LC(Station_NameSfty.OperLS.LC3,MANUAL,Station_NameSfty.OperLS.LC3ChnAInst,Station_NameSfty.OperLS.LC3ChnBInst,20,Station_NameSfty.OperLS.LC3Mute,Station_NameSfty.OperLS.LC3InsCR,Station_NameSfty.OperLS.LC3FltRst);								
+				N: [XIC(Station_NameSfty.OperLS.SCN1_1ChnAInp) ,XIC(Station_NameSfty.OperLS.SCN1_1MuteInstalled) XIC(Station_NameSfty.OperLS.SCN1_1Mute) ]OTE(Station_NameSfty.OperLS.SCN1_1ChnAInst);
+				N: [XIC(Station_NameSfty.OperLS.SCN1_1ChnBInp) ,XIC(Station_NameSfty.OperLS.SCN1_1MuteInstalled) XIC(Station_NameSfty.OperLS.SCN1_1Mute) ]OTE(Station_NameSfty.OperLS.SCN1_1ChnBInst);
+				N: XIC(Station_NameSfty.Oper1SwipeStart)OTE(Station_NameSfty.OperLS.SCN1_1InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.OperLS.SCN1_1FltRst);
+				N: XIC(Station_NameSfty.OperLS.SCN1_1Installed)XIC(Station_NameSfty.AllModRunMode)LC(Station_NameSfty.OperLS.SCN1_1,MANUAL,Station_NameSfty.OperLS.SCN1_1ChnAInst,Station_NameSfty.OperLS.SCN1_1ChnBInst,20,Station_NameSfty.OperLS.SCN1_1Mute,Station_NameSfty.OperLS.SCN1_1InsCR,Station_NameSfty.OperLS.SCN1_1FltRst);
+				N: [XIC(Station_NameSfty.OperLS.SCN1_2ChnAInp) ,XIC(Station_NameSfty.OperLS.SCN1_2MuteInstalled) XIC(Station_NameSfty.OperLS.SCN1_2Mute) ]OTE(Station_NameSfty.OperLS.SCN1_2ChnAInst);
+				N: [XIC(Station_NameSfty.OperLS.SCN1_2ChnBInp) ,XIC(Station_NameSfty.OperLS.SCN1_2MuteInstalled) XIC(Station_NameSfty.OperLS.SCN1_2Mute) ]OTE(Station_NameSfty.OperLS.SCN1_2ChnBInst);
+				N: XIC(Station_NameSfty.Oper1SwipeStart)OTE(Station_NameSfty.OperLS.SCN1_2InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.OperLS.SCN1_2FltRst);
+				N: XIC(Station_NameSfty.OperLS.SCN1_2Installed)XIC(Station_NameSfty.AllModRunMode)LC(Station_NameSfty.OperLS.SCN1_2,MANUAL,Station_NameSfty.OperLS.SCN1_2ChnAInst,Station_NameSfty.OperLS.SCN1_2ChnBInst,20,Station_NameSfty.OperLS.SCN1_2Mute,Station_NameSfty.OperLS.SCN1_2InsCR,Station_NameSfty.OperLS.SCN1_2FltRst);
+				N: [XIC(Station_NameSfty.OperLS.SCN2_1ChnAInp) ,XIC(Station_NameSfty.OperLS.SCN2_1MuteInstalled) XIC(Station_NameSfty.OperLS.SCN2_1Mute) ]OTE(Station_NameSfty.OperLS.SCN2_1ChnAInst);
+				N: [XIC(Station_NameSfty.OperLS.SCN2_1ChnBInp) ,XIC(Station_NameSfty.OperLS.SCN2_1MuteInstalled) XIC(Station_NameSfty.OperLS.SCN2_1Mute) ]OTE(Station_NameSfty.OperLS.SCN2_1ChnBInst);
+				N: XIC(Station_NameSfty.Oper1SwipeStart)OTE(Station_NameSfty.OperLS.SCN2_1InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.OperLS.SCN2_1FltRst);
+				N: XIC(Station_NameSfty.OperLS.SCN2_1Installed)XIC(Station_NameSfty.AllModRunMode)LC(Station_NameSfty.OperLS.SCN2_1,MANUAL,Station_NameSfty.OperLS.SCN2_1ChnAInst,Station_NameSfty.OperLS.SCN2_1ChnBInst,20,Station_NameSfty.OperLS.SCN2_1Mute,Station_NameSfty.OperLS.SCN2_1InsCR,Station_NameSfty.OperLS.SCN2_1FltRst);
+				N: [XIC(Station_NameSfty.OperLS.SCN2_2ChnAInp) ,XIC(Station_NameSfty.OperLS.SCN2_2MuteInstalled) XIC(Station_NameSfty.OperLS.SCN2_2Mute) ]OTE(Station_NameSfty.OperLS.SCN2_2ChnAInst);
+				N: [XIC(Station_NameSfty.OperLS.SCN2_2ChnBInp) ,XIC(Station_NameSfty.OperLS.SCN2_2MuteInstalled) XIC(Station_NameSfty.OperLS.SCN2_2Mute) ]OTE(Station_NameSfty.OperLS.SCN2_2ChnBInst);
+				N: XIC(Station_NameSfty.Oper1SwipeStart)OTE(Station_NameSfty.OperLS.SCN2_2InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.OperLS.SCN2_2FltRst);
+				N: XIC(Station_NameSfty.OperLS.SCN2_2Installed)XIC(Station_NameSfty.AllModRunMode)LC(Station_NameSfty.OperLS.SCN2_2,MANUAL,Station_NameSfty.OperLS.SCN2_2ChnAInst,Station_NameSfty.OperLS.SCN2_2ChnBInst,20,Station_NameSfty.OperLS.SCN2_2Mute,Station_NameSfty.OperLS.SCN2_2InsCR,Station_NameSfty.OperLS.SCN2_2FltRst);
+		END_ROUTINE

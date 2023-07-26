@@ -1,0 +1,69 @@
+    MODULE ST00180_RB01 (
+                         Parent := Unknown,
+                         Parent := Unknown,
+	                 CatalogNumber := "FANUC Robot R30iB Plus/A",
+	                 Vendor := 356,
+	                 ProductType := 12,
+	                 ProductCode := 4,
+	                 Major := 3,
+	                 Minor := 1,
+	                 UserDefinedVendor := 356,
+	                 UserDefinedProductType := 140,
+	                 UserDefinedProductCode := 40,
+	                 UserDefinedMajor := 3,
+	                 UserDefinedMinor := 1,
+	                 PortLabel := "ENet",
+                         NodeAddress := "192.168.1.23",
+	                 Mode := 2#0000_0000_0000_0000,
+	                 CompatibleModule := 1,
+	                 KeyMask := 2#0000_0000_0001_1111,
+	                 SafetyNetwork := 16#0000_4446_03c8_b4e2,
+	                 SafetyEnabled := 1)
+			ExtendedProp := [[[___<public><Vendor>FANUC Robotics America</Vendor><CatNum>FANUC Robot R30iB Plus</CatNum><Conn0RPI>6553705</Conn0RPI><Conn0IN>8</Conn0IN><Conn0OUT>8</Conn0OUT><Conn1RPI>4259927</Conn1RPI><Conn1IN>8</Conn1IN><Conn1OUT>8</Conn1OUT><Conn2RPI>3407926</Conn2RPI><Conn2IN>148</Conn2IN><Conn2OUT>148</Conn2OUT><Conn3RPI>4259895</Conn3RPI><Conn3IN>8</Conn3IN><Conn3OUT>8</Conn3OUT><Conn4RPI>4456516</Conn4RPI><Conn4IN>8</Conn4IN><Conn4OUT>8</Conn4OUT><Conn5RPI>3735608</Conn5RPI><Conn5IN>8</Conn5IN><Conn5OUT>8</Conn5OUT><ConfigID>16777220</ConfigID></public>___]]]
+			ConfigData := [4,100];
+			SafetyScript (Size := 57) := [53,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,37,0,0,0,0,0,0,0,0,3,0,0,0,23,0,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+			CONNECTION A_Safety_Output (Rate := 20000,
+			                            OutputSize := 8,
+			                            EventID := 0,
+			                            TimeoutMultiplier := 2,
+			                            NetworkDelayMultiplier := 200,
+			                            ReactionTimeLimit := 60,
+			                            Priority := High,
+			                            InputConnectionType := Unicast,
+			                            InputProductionTrigger := Application,
+			                            ConnectionPath := "20 04 25 00 00 04 20 04 25 00 88 03 20 04 25 00 00 04",
+			                            OutputTagSuffix := "SO")
+					OutputData (Class := Safety) := [[0,0,0,0,0,0,0,0]];
+			END_CONNECTION
+
+			CONNECTION B_Safety_Input (Rate := 10000,
+			                           InputSize := 12,
+			                           EventID := 0,
+			                           TimeoutMultiplier := 2,
+			                           NetworkDelayMultiplier := 200,
+			                           ReactionTimeLimit := 40.064,
+			                           Priority := High,
+			                           InputConnectionType := Unicast,
+			                           InputProductionTrigger := Application,
+			                           ConnectionPath := "20 04 25 00 00 04 20 04 25 00 00 04 20 04 25 00 08 03",
+			                           InputTagSuffix := "SI")
+					InputData (Class := Safety) := [2,[0,0,0,0,0,0,0,0]];
+			END_CONNECTION
+
+			CONNECTION Standard_Slot_01 (Rate := 32000,
+			                             InputSize := 148,
+			                             OutputSize := 148,
+			                             EventID := 0,
+			                             Priority := Scheduled,
+			                             InputConnectionType := Unicast,
+			                             InputProductionTrigger := Cyclic,
+			                             ConnectionPath := "20 04 24 64 2c 97 2c 65",
+			                             InputTagSuffix := "I1",
+			                             OutputTagSuffix := "O1")
+					InputData (Class := Standard) := [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+					OutputData (Class := Standard) := [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+			END_CONNECTION
+
+	END_MODULE

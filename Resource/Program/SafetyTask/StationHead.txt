@@ -1,0 +1,5 @@
+	PROGRAM Station_NameSfty (Class := Safety,
+	                     MAIN := "s_A00_Main",
+	                     MODE := 0,
+	                     DisableFlag := 0,
+	                     UseAsFolder := 0)

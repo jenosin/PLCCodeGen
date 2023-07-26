@@ -1,0 +1,43 @@
+		ROUTINE s_D05_AccLC 
+				RC: "************************************************************$N"
+				    "Safety Light Curtains and Scanners$N"
+				    "************************************************************";
+				N: NOP();
+				N: OTE(Station_NameSfty.AccessLS.LC1Installed)OTE(Station_NameSfty.AccessLS.LC2Installed)OTU(Station_NameSfty.AccessLS.LC3Installed)OTU(Station_NameSfty.AccessLS.SCN1_1Installed)OTU(Station_NameSfty.AccessLS.SCN1_2Installed)OTU(Station_NameSfty.AccessLS.SCN2_1Installed)OTU(Station_NameSfty.AccessLS.SCN2_2Installed);
+				RC: "************************************************************$N"
+				    "LC Instruction$N"
+				    "Input Mapping$N"
+				    "************************************************************$N"
+				    "Edit all required Input mapping rungs with the correct safety input$N"
+				    "Edit LC Muting as required. Check Rung description for details";
+				N: NOP();
+				RC: "************************************************************$N"
+				    "Station_Name ACCESS LC1$N"
+				    "Map Inputs$N"
+				    "************************************************************";
+				N: XIC(LCInput1)OTE(Station_NameSfty.AccessLS.LC1ChnAInp);
+				N: XIC(LCInput1)OTE(Station_NameSfty.AccessLS.LC1ChnBInp);
+				RC: "************************************************************$N"
+				    "LC Muting$N"
+				    "$N"
+				    "Set $QMuteInstalled$Q Bit to OTE if muting exists$N"
+				    "$N"
+				    "Change sEdit.Bit to required muting conditions.$N"
+				    "Every muting conditions shall be controlled by a safety instruction.$N"
+				    "$N"
+				    "Mutted devices require Yellow Indicator light$N"
+				    "************************************************************";
+				N: [OTE(Station_NameSfty.AccessLS.LC1MuteInstalled) ,XIC(Station_NameSfty.StaZn1Active) XIC(Station_NameSfty.AccessLS.LC1MuteInstalled) OTE(Station_NameSfty.AccessLS.LC1Mute) ];
+				RC: "************************************************************$N"
+				    "LC Instruction$N"
+				    "$N"
+				    "DO NOT EDIT AFTER THIS POINT$N"
+				    "************************************************************$N"
+				    "";
+				N: NOP();
+				N: [XIC(Station_NameSfty.AccessLS.LC1ChnAInp) ,XIC(Station_NameSfty.AccessLS.LC1MuteInstalled) XIC(Station_NameSfty.AccessLS.LC1Mute) ]OTE(Station_NameSfty.AccessLS.LC1ChnAInst);
+				N: [XIC(Station_NameSfty.AccessLS.LC1ChnBInp) ,XIC(Station_NameSfty.AccessLS.LC1MuteInstalled) XIC(Station_NameSfty.AccessLS.LC1Mute) ]OTE(Station_NameSfty.AccessLS.LC1ChnBInst);
+				N: XIC(Station_NameSfty.Oper1SwipeStart)ONS(Station_NameSfty.AccessLS.LC1InsCROns)OTE(Station_NameSfty.AccessLS.LC1InsCR);
+				N: XIC(sZone_Name.SftyFltRst)OTE(Station_NameSfty.AccessLS.LC1FltRst);
+				N: XIC(Station_NameSfty.AccessLS.LC1Installed)XIC(Station_NameSfty.AllModRunMode)LC(Station_NameSfty.AccessLS.LC1,MANUAL,Station_NameSfty.AccessLS.LC1ChnAInst,Station_NameSfty.AccessLS.LC1ChnBInst,20,Station_NameSfty.AccessLS.LC1Mute,Station_NameSfty.AccessLS.LC1InsCR,Station_NameSfty.AccessLS.LC1FltRst);
+		END_ROUTINE

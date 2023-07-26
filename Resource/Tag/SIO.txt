@@ -1,0 +1,2 @@
+		SIO_Name : Ludt_sIO_AB (Class := Standard) := [[28672,0,0,0]];
+		SIO_Name_ENet : Ludt_EnetDiag (Class := Standard) := [28672,0,0,0];

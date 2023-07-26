@@ -1,6 +1,6 @@
-    MODULE S005TL1SIO1 (
-                         Parent := FRM_P1_LOCAL,
-                         Parent := FRM_P1_LOCAL,
+    MODULE ST00070_SIO01 (
+                         Parent := Unknown,
+                         Parent := Unknown,
 	                    CatalogNumber := "1732ES-IB12XOBV2/A",
 	                    Vendor := 1,
 	                    ProductType := 35,
@@ -8,7 +8,7 @@
 	                    Major := 1,
 	                    Minor := 1,
 	                    PortLabel := "ENet",
-                         NodeAddress := "192.168.1.30",
+                         NodeAddress := "192.168.1.57",
 	                    Mode := 2#0000_0000_0000_0000,
 	                    CompatibleModule := 1,
 	                    KeyMask := 2#0000_0000_0001_1111,

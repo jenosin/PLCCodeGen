@@ -1,0 +1,9 @@
+		ROUTINE s_D02_OPR (Description := "Operator Finger Swipe Safety Routine")
+				RC: "************************************************************$N"
+				    "Station Station_Name Cycle Start$N"
+				    "Finger Swipe$N"
+				    "************************************************************";
+				N: NOP();
+				N: XIC(Station_NameSfty.Oper1Instd)FingerSwipe(Station_NameSfty.OPR1,Station_NameSfty.Oper1SwipeStart);
+				N: XIC(Station_NameSfty.Oper2Instd)FingerSwipe(Station_NameSfty.OPR2,Station_NameSfty.Oper2SwipeStart);
+		END_ROUTINE

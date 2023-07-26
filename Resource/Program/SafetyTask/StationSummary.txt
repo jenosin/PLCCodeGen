@@ -1,0 +1,20 @@
+		ROUTINE s_Z00_Summary (Description := "Station Safety Summary")
+				RC: "############################$N"
+				    "Station Safety Summary$N"
+				    "############################";
+				N: NOP();
+				N: OTU(Station_NameSfty.Oper1Instd)OTU(Station_NameSfty.Oper2Instd);
+				N: OTU(Station_NameSfty.LoadAssistInstld);
+				N: [XIO(Station_NameSfty.OperLS.LC1.LCB) ,XIO(Station_NameSfty.OperLS.LC1Installed) ][XIO(Station_NameSfty.OperLS.LC2.LCB) ,XIO(Station_NameSfty.OperLS.LC2Installed) ][XIO(Station_NameSfty.OperLS.LC3.LCB) ,XIO(Station_NameSfty.OperLS.LC3Installed) ][XIO(Station_NameSfty.OperLS.SCN1_1.O1) ,XIO(Station_NameSfty.OperLS.SCN1_1Installed) ][XIO(Station_NameSfty.OperLS.SCN1_2.O1) ,XIO(Station_NameSfty.OperLS.SCN1_2Installed) ][XIO(Station_NameSfty.OperLS.SCN2_1.O1) ,XIO(Station_NameSfty.OperLS.SCN2_1Installed) ][XIO(Station_NameSfty.OperLS.SCN2_2.O1) ,XIO(Station_NameSfty.OperLS.SCN2_2Installed) ]OTE(Station_NameSfty.StaZn1NotBlkd);
+				N: [XIC(Station_NameSfty.OperLS.LC1.O1) ,XIO(Station_NameSfty.OperLS.LC1Installed) ][XIC(Station_NameSfty.OperLS.LC2.O1) ,XIO(Station_NameSfty.OperLS.LC2Installed) ][XIC(Station_NameSfty.OperLS.LC3.O1) ,XIO(Station_NameSfty.OperLS.LC3Installed) ][XIC(Station_NameSfty.OperLS.SCN1_1.O1) ,XIO(Station_NameSfty.OperLS.SCN1_1Installed) ][XIC(Station_NameSfty.OperLS.SCN1_2.O1) ,XIO(Station_NameSfty.OperLS.SCN1_2Installed) ][XIC(Station_NameSfty.OperLS.SCN2_1.O1) ,XIO(Station_NameSfty.OperLS.SCN2_1Installed) ][XIC(Station_NameSfty.OperLS.SCN2_2.O1) ,XIO(Station_NameSfty.OperLS.SCN2_2Installed) ]OTE(Station_NameSfty.StaZn1Active);
+				N: [XIO(Station_NameSfty.OperLS.LC1.LCB) ,XIO(Station_NameSfty.OperLS.LC1Installed) ][XIO(Station_NameSfty.OperLS.SCN1_1.O1) ,XIO(Station_NameSfty.OperLS.SCN1_1Installed) ][XIO(Station_NameSfty.OperLS.SCN1_2.O1) ,XIO(Station_NameSfty.OperLS.SCN1_2Installed) ]OTE(Station_NameSfty.StaZn2NotBlkd);
+				N: [XIC(Station_NameSfty.OperLS.LC2.O1) ,XIO(Station_NameSfty.OperLS.LC2Installed) ][XIC(Station_NameSfty.OperLS.SCN2_1.O1) ,XIO(Station_NameSfty.OperLS.SCN2_1Installed) ][XIC(Station_NameSfty.OperLS.SCN2_2.O1) ,XIO(Station_NameSfty.OperLS.SCN2_2Installed) ]OTE(Station_NameSfty.StaZn2Active);
+				N: OTE(Station_NameSfty.StaZn3NotBlkd);
+				N: OTE(Station_NameSfty.StaZn3Active);
+				N: XIC(Station_NameSfty.StaZn1Active)XIC(Station_NameSfty.StaZn2Active)XIC(Station_NameSfty.StaZn3Active)OTE(Station_NameSfty.AllStaLtScrnOK);
+				N: XIC(Station_NameSfty.LoadAssistInstld)OTE(Station_NameSfty.LoadAssistClear);
+				N: XIC(Station_NameSfty.LoadAssistInstld)OTE(Station_NameSfty.LoadAssistActive);
+				N: XIC(Station_NameSfty.Oper1Instd)XIC(sReplaceMe.FSInput1)OTE(Station_NameSfty.Oper1SwipeStart);
+				N: XIC(Station_NameSfty.Oper2Instd)XIC(sReplaceMe.FSInput2)OTE(Station_NameSfty.Oper2SwipeStart);
+				N: XIC(sSftyFromStd.Station_NameClrToUnlock)OTE(Station_NameSfty.ClearToUnlock);
+		END_ROUTINE

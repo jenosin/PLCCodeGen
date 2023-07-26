@@ -1,0 +1,19 @@
+		ROUTINE s_Z02_ZoneSftyOut (Description := "Zone Safety  Output Mapping")
+				RC: "************************************************************$N"
+				    "Zone Safety Output Mapping$N"
+				    "Next and Previous Zone Interlocks$N"
+				    "************************************************************";
+				N: NOP();
+				N: XIC(sZone_Name.AllEStopsOk)OTE(Z1SftyIntlkOut.EStopsOk);
+				N: XIC(sZone_Name.EnExLSActive)OTE(Z1SftyIntlkOut.EnExLSActive);
+				N: OTE(Z1SftyIntlkOut.EntryLSActive);
+				N: XIC(S040Sfty.IntSftyDevice.LC1.O1)OTE(Z1SftyIntlkOut.ExitLSActive);
+				N: XIC(sZone_Name.PowerEnbld)OTE(Z1SftyIntlkOut.PowerEnbld);
+				N: XIC(sZone_Name.AllGatesOk)OTE(Z1SftyIntlkOut.AllGatesOk);
+				N: XIC(sZone_Name.StaGateRstPB)OTE(Z1SftyIntlkOut.StaGateRstPB);
+				N: XIC(sZone_Name.StaGateStartPB)OTE(Z1SftyIntlkOut.StaGateStartPB);
+				N: XIC(sZone_Name.StaPowerEnblPB)OTE(Z1SftyIntlkOut.StaPowerEnblPB);
+				N: XIC(sZone_Name.StaOpenGateReqPB)OTE(Z1SftyIntlkOut.StaOpenGateReqPB);
+				N: XIC(sZone_Name.RbtInTeach)OTE(Z1SftyIntlkOut.RbtInTeach);
+				N: XIC(sZone_Name.ClearToUnlock)OTE(Z1SftyIntlkOut.ClearToUnlock);
+		END_ROUTINE

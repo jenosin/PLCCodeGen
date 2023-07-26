@@ -1,0 +1,11 @@
+		ROUTINE s_A00_Main 
+				N: JSR(s_B00_ModStatus,0);
+				N: JSR(s_D00_Estop,0);
+				N: JSR(s_D01_LC,0);
+				N: JSR(s_D02_OPR,0);
+				N: JSR(s_D03_SPD,0);
+				N: JSR(s_D04_ICSD1,0);
+				N: JSR(s_E00_RB01,0);
+				N: JSR(s_E01_TL1,0);
+				N: JSR(s_Z00_Summary,0);
+		END_ROUTINE
