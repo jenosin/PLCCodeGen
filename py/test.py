@@ -46,15 +46,31 @@ def allStations(datasheets, zonelist):
 		sheet = datasheets[zone]
 		firstST = findCellAddress(sheet, "Station Name", 1)
 		lastST = lastRow(sheet, "A")
-		print(f"firstST is {firstST} ,lastRow is {lastST}")
 		for row in sheet.iter_rows(min_row=firstST, max_row=lastST, min_col=1, max_col=1):
-			for cell in row:
-				if cell.value != "Station Name" and cell.value != None:
-					zone_stations.append(cell.value)
+			if row[0].value != "Station Name" and row[0].value != None:
+				zone_stations.append(row[0].value)
 		line_stations[zone]=zone_stations
 	return line_stations
 
+def allOPs(datasheets, zonelist):
+	line_OPs = {}
+	for zone in zonelist:
+		zone_OPs = {}
+		sheet = datasheets[zone]
+		firstOP= 7
+		lastOP = findCellAddress(sheet, "Station Name", 1) - 2
+		for row in sheet.iter_rows(min_row=firstOP, max_row=lastOP, min_col=3, max_col=5):
+			device_type = row[0].value
+			station_name = row[1].value
+			if device_type == "Operator" and station_name != None:
+				if station_name not in zone_OPs:
+					zone_OPs[station_name] = 0
+				zone_OPs[station_name] += 1
+		line_OPs[zone] = zone_OPs
+	return line_OPs
+
+
 datasheets = matrix_open()
 zones = zoneArray(datasheets)
-AllStations = allStations(datasheets, zones)
-print(AllStations)
+AllOPs = allOPs(datasheets, zones)
+print(AllOPs)

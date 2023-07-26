@@ -76,6 +76,145 @@ class Program_model:
 			line_stations[zone]=zone_stations
 		return line_stations
 
+	def allGates(self, datasheets, zonelist):
+		line_gates = {}
+		for zone in zonelist:
+			zone_gates = []
+			sheet = datasheets[zone]
+			firstG = 7
+			lastG = self.findCellAddress(sheet, "Station Name", 1) - 2
+			print(f"firstST is {firstG} ,lastRow is {lastG}")
+			for row in sheet.iter_rows(min_row=firstG, max_row=lastG, min_col=3, max_col=5):
+				device_type = row[0].value
+				device_name = row[2].value
+				if device_type == "Gate":
+					zone_gates.append(device_name)
+			line_gates[zone] = zone_gates
+		return line_gates
+
+	def allRobots(self, datasheets, zonelist):
+		line_robots = {}
+		for zone in zonelist:
+			zone_robots = {}
+			sheet = datasheets[zone]
+			firstRB = 7
+			lastRB = self.findCellAddress(sheet, "Station Name", 1) - 2
+			for row in sheet.iter_rows(min_row=firstRB, max_row=lastRB, min_col=3, max_col=5):
+				device_type = row[0].value
+				if device_type == "FANUC":				
+					station_name = row[1].value
+					if station_name not in zone_robots:
+						zone_robots[station_name] = []
+					device_name = row[2].value
+					zone_robots[station_name].append(station_name + device_name)
+			line_robots[zone] = zone_robots
+		return line_robots
+
+	def allDrives(self, datasheets, zonelist):
+		line_drives = {}
+		for zone in zonelist:
+			zone_drives = {}
+			sheet = datasheets[zone]
+			firstDRV = 7
+			lastDRV = self.findCellAddress(sheet, "Station Name", 1) - 2
+			for row in sheet.iter_rows(min_row=firstDRV, max_row=lastDRV, min_col=3, max_col=5):
+				device_type = row[0].value
+				if device_type == "Drive":				
+					station_name = row[1].value
+					if station_name not in zone_drives:
+						zone_drives[station_name] = []
+					device_name = row[2].value
+					zone_drives[station_name].append(station_name + device_name)
+			line_drives[zone] = zone_drives
+		return line_drives
+
+	def allTooling(self, datasheets, zonelist):
+		line_tools = {}
+		for zone in zonelist:
+			zone_tools = {}
+			sheet = datasheets[zone]
+			firstTL = 7
+			lastTL = self.findCellAddress(sheet, "Station Name", 1) - 2
+			for row in sheet.iter_rows(min_row=firstTL, max_row=lastTL, min_col=3, max_col=5):
+				device_type = row[0].value
+				if device_type == "VM":
+					station_name = row[1].value
+					if station_name not in zone_tools:
+						zone_tools[station_name] = []
+					device_name = row[2].value
+					zone_tools[station_name].append(station_name + device_name)
+			line_tools[zone] = zone_tools
+		return line_tools
+
+	def allCNV(self, datasheets, zonelist):
+		line_CNV = {}
+		for zone in zonelist:
+			zone_tools = {}
+			sheet = datasheets[zone]
+			firstCNV = 7
+			lastCNV = self.findCellAddress(sheet, "Station Name", 1) - 2
+			for row in sheet.iter_rows(min_row=firstCNV, max_row=lastCNV, min_col=3, max_col=5):
+				device_type = row[0].value
+				if device_type == "CNV":
+					station_name = row[1].value
+					if station_name not in zone_CNV:
+						zone_CNV[station_name] = []
+					device_name = row[2].value
+					zone_CNV[station_name].append(station_name + device_name)
+			line_CNV[zone] = zone_CNV
+		return line_CNV
+
+	def allEstops(self, datasheets, zonelist):
+		line_Estops = {}
+		for zone in zonelist:
+			zone_Estops = {}
+			sheet = datasheets[zone]
+			firstES= 7
+			lastES = self.findCellAddress(sheet, "Station Name", 1) - 2
+			for row in sheet.iter_rows(min_row=firstES, max_row=lastES, min_col=3, max_col=5):
+				device_type = row[0].value
+				station_name = row[1].value
+				if device_type == "ESTOP" and station_name != None:
+					if station_name not in zone_Estops:
+						zone_Estops[station_name] = 0
+					zone_Estops[station_name] += 1
+			line_Estops[zone] = zone_Estops
+		return line_Estops
+
+	def allLCs(self, datasheets, zonelist):
+		line_LCs = {}
+		for zone in zonelist:
+			zone_LCs = {}
+			sheet = datasheets[zone]
+			firstLC= 7
+			lastLC = self.findCellAddress(sheet, "Station Name", 1) - 2
+			for row in sheet.iter_rows(min_row=firstLC, max_row=lastLC, min_col=3, max_col=5):
+				device_type = row[0].value
+				station_name = row[1].value
+				if device_type == "LC/SCN" and station_name != None:
+					if station_name not in zone_LCs:
+						zone_LCs[station_name] = 0
+					zone_LCs[station_name] += 1
+			line_LCs[zone] = zone_LCs
+		return line_LCs
+
+	def allOPs(self, datasheets, zonelist):
+		line_OPs = {}
+		for zone in zonelist:
+			zone_OPs = {}
+			sheet = datasheets[zone]
+			firstOP= 7
+			lastOP = self.findCellAddress(sheet, "Station Name", 1) - 2
+			for row in sheet.iter_rows(min_row=firstOP, max_row=lastOP, min_col=3, max_col=5):
+				device_type = row[0].value
+				station_name = row[1].value
+				if device_type == "Operator" and station_name != None:
+					if station_name not in zone_OPs:
+						zone_OPs[station_name] = 0
+					zone_OPs[station_name] += 1
+			line_OPs[zone] = zone_OPs
+		return line_OPs
+
 	def save_treeview_data(self, treeview, parent="", node_data_list=None):
 		if node_data_list is None:
 			node_data_list = []
